@@ -1,3 +1,9 @@
+<!--
+ * @Author: zhangyao
+ * @Date: 2020-11-27 17:15:11
+ * @LastEditors: zhangyao
+ * @LastEditTime: 2020-12-03 14:22:21
+-->
 <template>
   <div class="ux-table-tpl">
     <el-table 
@@ -31,7 +37,7 @@
             </el-table-column>
              <template v-for="(column,index) in columnData">
                  <el-table-column 
-                    :label="column.label || ''"
+                    :label="$t(`table.${column.label}`) || ''"
                     :prop="column.prop"
                     :key="index+'column'"
                     :align="column.align || 'center'"
@@ -44,7 +50,7 @@
                           </el-tooltip>
                            <span class="cursor" v-if="column.type==='to-page'" @click="toPage(props.row)">{{props.row[column.prop]}}</span>
                            <span v-if="column.type==='html'">{{props.row[column.prop]}}</span>
-                           <span v-if="column.type==='status'||column.type==='state'">{{props.row[column.prop] | statusFilter}}</span>
+                           <span v-if="column.type==='status'||column.type==='state'"><i class="charts-circle m-r-5" :class="computeStatus(props.row[column.prop])"></i>{{props.row[column.prop] | statusFilter}}</span>
                            <span v-if="column.type==='time'">{{props.row[column.prop].includes&&props.row[column.prop].includes('-')? props.row[column.prop]:props.row[column.prop] | dateFormat}}</span>
                            <span v-if="column.type==='progress'">
                                <el-progress class="ux-table-progress" :text-inside="true" :stroke-width="18"  :percentage="props.row[column.prop]"></el-progress>

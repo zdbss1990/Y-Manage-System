@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-16 10:22:39
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-01 14:50:45
+ * @LastEditTime: 2020-12-03 10:38:23
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router';
@@ -37,15 +37,25 @@ const routes = [{
           },
       ]
     },
-   
     {
-      path:'charts',
-      name: 'charts',
+      path:'table',
+      name: 'table',
+      redirect: {name:'basic-tables'},
       meta:{
-        title:'charts'
+        title:'table'
       },
-      component: () => import( /* webpackChunkName: "Charts" */ '@views/charts/charts.vue')
-    }
+      component: () => import( /* webpackChunkName: "Table" */ '@views/table/index.vue'),
+      children:[
+        {
+          path: 'basic-tables',
+          name: 'basic_tables',
+          meta:{
+            title:'basic_tables'
+          },
+          component: () => import( /* webpackChunkName: "BasicTables" */ '@views/table/basic-tables/basic-tables.vue')
+        },
+      ]
+     }
    ]
   },
   

@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-17 17:22:14
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-03 10:13:32
+ * @LastEditTime: 2020-12-03 17:30:29
  */
 import enLocale from 'element-ui/lib/locale/lang/en';
 
@@ -11,7 +11,8 @@ let _en = Object.assign({
         'home':'Home',
         'all':'All',
         'total':'Total',
-        'loading':'Loading'
+        'loading':'Loading',
+        'page':'Page',
     },
     msg:{
         'network_error':'Network Error',
@@ -26,19 +27,36 @@ let _en = Object.assign({
         'form':'Form',
         'monitoring':'Monitor',
         'power':'Power',
-        'upload':'Upload'
+        'upload':'Upload',
+        'table':'Table',
+        'basic_tables':'Basic Tables'
     },
     status:{
         'no_time':'No Time',
-        'active':'Active'
+        'active':'Active',
+        'off_line':'Off Line',
+        'online':'Online'
     },
     table:{
         'task':'Task',
-        'address':'Address'
+        'address':'Address',
+        'name':'Name',
+        'sex':'Sex',
+        'status':'Status',
+        'create_time':'Create Time',
+        'operation':'Operation'
     },
     form:{
         'name':'Name',
-        'link':'Link'
+        'link':'Link',
+        'sex':'Sex',
+        'status':'Status',
+        'man':'Man',
+        'woman':'Woman',
+        'off_line':'Off Line',
+        'online':'Online',
+        'create_time':'Create Time',
+        'address':'Address'
     },
     button:{
         'more':'More',
@@ -46,7 +64,14 @@ let _en = Object.assign({
         'edit':'Edit',
         'cancel':'Cancel',
         'confirm':'Confirm',
-        'add':'Add'
+        'add':'Add',
+        'search':'Search',
+        'reset':'Reset',
+        'delete_batches':'Delete Batches',
+        'more':'More Operations'
+    },
+    basicTables:{
+        'add_option':'Add Option'
     },
     dashborad:{
         'visitor_volume':'Visitor Volume',
@@ -78,7 +103,9 @@ let _en = Object.assign({
     },
     errMsg:{
        'please_enter_the_name':'Please Enter The Name',
-       'please_enter_the_link':'Please Enter The Link'
+       'please_enter_the_link':'Please Enter The Link',
+       'please_select_time':'Please Select Time',
+       'please_enter_the_address':'Please Enter The Address'
     }
 },enLocale)
 

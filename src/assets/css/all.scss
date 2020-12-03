@@ -4,8 +4,17 @@
 .height-full{
    height: 100%;
 }
+.min-height-full{
+   min-height: 100%;
+}
 .pull-right{
    float: right;
+}
+.p-20{
+   padding: 20px;
+}
+.p-10{
+   padding: 10px;
 }
 .m-t-5{
    margin-top: 5px;
@@ -95,7 +104,12 @@
 .text-center{
    text-align: center;
 }
-
+.text-right{
+   text-align: right;
+}
+.text-end{
+   text-align: end !important;
+}
 .success{
   color: $success;
 }
@@ -110,4 +124,16 @@
 }
 .inline{
    display: inline-block;
+}
+.bg-f{
+   background: $fff;
+}
+.radius-4{
+   border-radius: 4px;
+}
+.border-box{
+   box-sizing: border-box;
+}
+.vertica-middle{
+   vertical-align: middle;
 }

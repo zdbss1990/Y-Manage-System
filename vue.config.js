@@ -19,7 +19,8 @@ module.exports={
            scss:{
                 prependData:`
                     @import "~@css/variables.scss";
-                    @import '~@css/all.scss';
+                    @import "~@css/all.scss";
+                    @import "~@css/mixin.scss";
                 `
            }
         }

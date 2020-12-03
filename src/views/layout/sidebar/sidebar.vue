@@ -40,6 +40,17 @@ export default {
                 }
            ]
          },
+          {
+           path:'/table',
+           icon:'el-icon-tickets',
+           name:'table',
+           children:[
+                {
+                  path:'/table/basic-tables',
+                  name:'basic_tables',
+                }
+           ]
+         },
          {
            path:'/charts',
            icon:'el-icon-pie-chart',

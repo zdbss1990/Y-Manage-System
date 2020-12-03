@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-17 17:22:08
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-03 10:12:48
+ * @LastEditTime: 2020-12-03 17:29:56
  */
 import zhLocale from 'element-ui/lib/locale/lang/zh-CN'
 
@@ -11,6 +11,7 @@ let _zhCN = Object.assign({
         'home':'主页',
         'all':'全部',
         'total':'条',
+        'page':'页',
         'loading':'加载中...'
     },
     msg:{
@@ -26,19 +27,36 @@ let _zhCN = Object.assign({
         'form':'表单',
         'monitoring':'监控',
         'power':'权限',
-        'upload':'上传'
+        'upload':'上传',
+        'table':'表格',
+        'basic_tables':'基础表格'
     },
     status:{
         'no_time':'暂无',
-        'active':'激活'
+        'active':'激活',
+        'off_line':'离线',
+        'online':'在线'
     },
     table:{
         'task':'任务',
-        'address':'地址'
+        'address':'地址',
+        'name':'名称',
+        'sex':'性别',
+        'status':'状态',
+        'create_time':'创建时间',
+        'operation':'操作'
     },
     form:{
         'name':'名称',
-        'link':'链接'
+        'link':'链接',
+        'sex':'性别',
+        'status':'状态',
+        'man':'男',
+        'woman':'女',
+        'off_line':'离线',
+        'online':'在线',
+        'create_time':'创建时间',
+        'address':'地址'
     },
     button:{
         'more':'更多',
@@ -46,7 +64,11 @@ let _zhCN = Object.assign({
         'edit':'编辑',
         'cancel':'取消',
         'confirm':'确定',
-        'add':'添加'
+        'add':'添加',
+        'search':'搜索',
+        'reset':'重置',
+        'delete_batches':'批量删除',
+        'more':'批量操作'
     },
     dashborad:{
         'visitor_volume':'访问量',
@@ -76,9 +98,14 @@ let _zhCN = Object.assign({
         'shortcuts':'快捷操作',
         'schedule':'待办事项'
     },
+    basicTables:{
+        'add_option':'添加选项'
+    },
     errMsg:{
         'please_enter_the_name':'请输入名称',
-        'please_enter_the_link':'请输入链接'
+        'please_enter_the_link':'请输入链接',
+        'please_select_time':'请选择时间',
+        'please_enter_the_address':'请输入地址'
      }
 },zhLocale)
 

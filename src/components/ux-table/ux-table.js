@@ -1,3 +1,9 @@
+/*
+ * @Author: zhangyao
+ * @Date: 2020-11-27 17:15:11
+ * @LastEditors: zhangyao
+ * @LastEditTime: 2020-12-03 11:22:35
+ */
 /**
  *  @tableData 表格数据
  *  @columnData 表头数据
@@ -60,6 +66,13 @@ export default {
     },
     data() {
         return {
+        }
+    },
+    computed:{
+        computeStatus(){
+            return (val)=>{
+                return val==='online' ? 'bg-success':'bg-danger'
+            }
         }
     },
     methods: {

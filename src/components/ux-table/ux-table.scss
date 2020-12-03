@@ -9,4 +9,7 @@
 .el-table ::v-deep.disabled_selection .cell .el-checkbox__inner{
     display:none;
     position:relative;
-  }
+}
+.charts-circle{
+    @include charts-circle
+}
