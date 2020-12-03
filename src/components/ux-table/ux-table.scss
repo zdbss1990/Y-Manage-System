@@ -1,0 +1,12 @@
+.ux-table-progress{
+    width: 90% ;
+    margin: 0 auto;
+}
+.cursor{
+    cursor: pointer;
+}
+
+.el-table ::v-deep.disabled_selection .cell .el-checkbox__inner{
+    display:none;
+    position:relative;
+  }

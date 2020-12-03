@@ -1,0 +1,14 @@
+.no-redirect{
+   color:$gray;
+}
+.link{
+    &:hover{
+       cursor: pointer; 
+       color: $link-color;
+    }
+}
+.ux-router-tag-tpl{
+    overflow: hidden;
+    padding: 10px;
+    font-size: 14px;
+}

@@ -1,32 +1,32 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+      <router-view v-if="isActiveRoute"/>
   </div>
 </template>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import getPageTitle from '@utils/title/index.js'
+export default {
+   data(){
+     return{
+        isActiveRoute:true
+     }
+   },
+   methods:{
+     reload(){
+       this.isActiveRoute=false;
+       this.$nextTick(()=>{
+         this.isActiveRoute=true
+       })
+     }
+   },
+   watch:{
+     '$i18n.locale'(newV,oldV){
+        if(newV!=oldV){
+          this.reload();
+          document.title=getPageTitle(this.$router.currentRoute.meta.title)
+        }
+     }
+   }
 }
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+</script>
+<style lang="scss"></style>

@@ -1,0 +1,113 @@
+.font-weight{
+   font-weight: bolder;
+}
+.height-full{
+   height: 100%;
+}
+.pull-right{
+   float: right;
+}
+.m-t-5{
+   margin-top: 5px;
+}
+.m-t-10{
+   margin-top: 10px;
+}
+.m-r-5{
+   margin-right: 5px;
+}
+.m-b-10{
+   margin-bottom: 10px;
+}
+.m-l-5{
+   margin-left: 5px;
+}
+.m-l-10{
+   margin-left: 10px;
+}
+.m-l-20{
+   margin-left: 20px;
+}
+.m-l-40{
+   margin-left: 40px;
+}
+.m-b-5{
+   margin-bottom: 5px;
+}
+.w50{
+   width: 50px;
+}
+.w200{
+  width:200px;
+}
+.w100{
+   width: 100px;
+}
+.f-s-12{
+   font-size: 12px;
+}
+.f-s-14{
+   font-size: 14px;
+}
+.f-s-18{
+   font-size: 18px;
+}
+.f-s-24{
+   font-size: 24px;
+}
+.f-s-34{
+   font-size: 34px;
+}
+.font-bold{
+   font-weight: bolder;
+  
+}
+.align-center{
+   align-items: center;
+}
+.justify-center{
+   justify-content: space-around;
+}
+.flex-wrap{
+   flex-wrap: wrap;
+}
+.display-flex{
+   display: flex;
+}
+.m-r-auto{
+   margin-right: auto;
+}
+.m-l-auto{
+   margin-left: auto;
+}
+.bg-success{
+   background-color: $success;
+}
+.bg-info{
+   background-color: $info;
+}
+.bg-warning{
+   background-color: $warning;
+}
+.bg-danger{
+   background-color: $danger;
+}
+.text-center{
+   text-align: center;
+}
+
+.success{
+  color: $success;
+}
+.info{
+   color: $info;
+}
+.warning{
+   color: $warning;
+}
+.danger{
+   color: $danger;
+}
+.inline{
+   display: inline-block;
+}

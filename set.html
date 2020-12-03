@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>set</title>
+</head>
+<body>
+    <script>
+            // let set =new Set([1,2,2,3,21,3,4]);
+            // set.forEach(item=>{
+            //     console.log(item)
+            // })
+            // for(let i of set){
+            //     console.log(i)
+            // }
+            // for(let i of set.keys()){
+            //     console.log(i)
+            // }
+            // for(let i of set.values()){
+            //     console.log(i)
+            // }
+            // for(let i of set.entries()){
+            //     console.log(i)
+            // }
+            // let set=new Set([0,-0]);
+            // console.log(set)  //Set(1){0}
+            //  let set=new Set([undefined,undefined]);
+            //  console.log(set)  //Set(1) {undefined}
+
+            // let set=new Set([NaN,NaN]);
+            // console.log(set) //Set(1) {NaN}
+            // let set=new Set([1,2,3]);
+            // set.clear()
+            // console.log(set.size)  //0
+
+            //1.数组去重
+            // let arr=[1,2,3,4,5,2,1,4]
+            // let set=[...new Set(arr)];
+            // console.log(set) //[1, 2, 3, 4, 5]
+  
+            //差集
+            // let arr1=new Set([1,2,3])
+            // let arr2=new Set([2,3,4])
+            // let set=[...arr1].filter(item=>!arr2.has(item))
+            // console.log(set) //[1]
+
+            // let weakSet=new WeakSet([2,3]);
+            // console.log(weakSet) //error
+
+            // let ws=new WeakSet();
+            // ws.add(1);
+            // console.log(ws) //error
+
+            // let arr=[1,2]
+            // let arr1=[1,2]
+            // let ws=new WeakSet([arr,arr1]); 
+            // console.log(ws) //WeakSet {Array(2), Array(2)}
+
+            // let obj={name:1}
+            // let obj2={name:1}
+            // let ws=new WeakSet([obj,obj2]); 
+            // console.log(ws) //WeakSet {{…}, {…}}
+
+            // let arr=[1,2]
+            // let ws=new WeakSet();
+            // ws.add(arr);
+            // console.log(ws) //WeakSet {Array(2)}
+
+            // let obj={name:'zdb'}
+            // let ws=new WeakSet([obj]);
+            // ws.delete(obj)
+            // console.log(ws) //WeakSet {}
+
+            //深copy
+            // let obj={name:1,age:/\d/,fn:function(){console.log(1)},date:new Date,sex:null,school:undefined}; 
+            // obj.o=obj
+            // let deepClone=(target,weak=new WeakSet())=>{
+            //     if(typeof target !=='object' || target===null) return target
+            //     if(target instanceof RegExp) return new RegExp(target)
+            //     if(target instanceof Date) return new Date(target)
+            //     //如果是对象，数组
+            //     let o=new target.constructor();
+            //     if(!weak.has(target)){
+            //         weak.add(target)
+            //     }else{
+            //         return target
+            //     }
+            //     for(let key in target){
+            //         o[key]= typeof target[key]==='object' ? deepClone(target[key],weak):target[key]
+            //     }
+            //     return o
+            // }
+            // console.log(deepClone(obj))
+
+            //map
+
+            // let obj={name:1};
+
+            // let obj1={
+            //     [obj]:1
+            // }
+            // console.log(obj1['[object Object]']) //1
+            // console.log(obj1[Object.prototype.toString()]) //1
+
+            // const m=new Map()
+            // let o={p:'hello'}
+            // m.set(2,3)
+            // m.set(o,123)
+            // console.log(m) //Map(2) {2 => 3, {…} => 123}
+
+            // const map=new Map([[2,4],['dw',2]])
+            // console.log(map) //Map(2) {2 => 4, "dw" => 2}
+            
+            //set添加
+            // const m=new Map([[1,2]])
+            // m.set(3,10)  //key,value
+            // console.log(m) //Map(2) {1 => 2, 3 => 10}
+
+            //get获取
+            // const m=new Map([[1,3]])
+            // console.log(m.get(1)) //3
+
+            //delete删除
+            // const m=new Map([[1,3]])
+            // m.clear()
+            // console.log(m.size) //0
+
+            // const m=new Map([[1,3],['34',45]])
+            // m.forEach(item=>{
+            //     console.log(item)  //3 45
+            // })
+
+            // for(let key of m.keys()){
+            //     console.log(key)  //1 34
+            // }
+            // for(let val of m.values()){
+            //     console.log(val)  //3 45
+            // }
+            // for(let ent of m.entries()){
+            //     console.log(ent) //[1, 3] ["34", 45]
+            // }
+
+            // const map = new Map([
+            //     [1, 'one'],
+            //     [2, 'two'],
+            //     [3, 'three'],
+            // ]);
+            
+            // console.log([...map.keys()]) //[1, 2, 3]
+            // console.log([...map.entries()]) //[[1, 'one'], [2, 'two'],[3, 'three']]
+            // console.log([...map.values()])//["one", "two", "three"]
+
+            // const map=new WeakMap();
+            // map.set(1,2)  //error
+            // map.set(null,2) //error
+
+            // const wm=new WeakMap();
+            // let key={}
+            // let obj={foo:1}
+            // wm.set(key,obj)
+            // key=null
+            // console.log(wm.get(key)) //undefined
+
+            // const wm=new WeakMap();
+            // let key={}
+            // wm.set(key,2) 
+            // wm.delete(key)
+            // console.log(wm.has(key)) //false
+    </script>
+</body>
+</html>
