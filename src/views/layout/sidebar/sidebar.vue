@@ -3,21 +3,24 @@
 
 <template>
   <div class="ux-sidebar-tpl" :style="collapse ?'width:65px':'width:220px'" :class="show? 'min-layout' : 'max-layout'">
-    <el-menu
-      :default-active="$route.path"
-      class="el-menu-vertical-demo sidebar-menu"
-      background-color="#2d353c"
-      text-color="rgba(255, 255, 255, 0.45)"
-      active-text-color="#fff"
-      :collapse="collapse"
-      router
-    >
-      <menu-item v-for="(menu,index) in menuData" :menu="menu" :key="index"></menu-item>
-      <!-- 展开关闭箭头 -->
-      <div class="arrow" @click="changeCollapseState">
-        <i :class="!collapse ? 'el-icon-arrow-left':'el-icon-arrow-right'"></i>
-      </div>
-    </el-menu>
+     
+        <el-menu
+          :default-active="$route.path"
+          class="el-menu-vertical-demo sidebar-menu"
+          background-color="#2d353c"
+          text-color="rgba(255, 255, 255, 0.45)"
+          active-text-color="#fff"
+          :collapse="collapse"
+          router
+        >
+        <vue-custom-scrollbar class="custom-scrollbar height-full" >
+              <menu-item v-for="(menu,index) in menuData" :menu="menu" :key="index"></menu-item>
+        </vue-custom-scrollbar>
+        <!-- 展开关闭箭头 -->
+          <div class="arrow" @click="changeCollapseState">
+            <i :class="!collapse ? 'el-icon-arrow-left':'el-icon-arrow-right'"></i>
+          </div>
+        </el-menu>
   </div>
 </template>
 <script>
@@ -41,13 +44,17 @@ export default {
            ]
          },
           {
-           path:'/table',
+           path:'/list',
            icon:'el-icon-tickets',
-           name:'table',
+           name:'list',
            children:[
                 {
-                  path:'/table/basic-tables',
+                  path:'/list/basic-tables',
                   name:'basic_tables',
+                },
+                {
+                  path:'/list/product-list',
+                  name:'product_list',
                 }
            ]
          },
@@ -72,6 +79,78 @@ export default {
                       children:[
                         {
                            path:'/input1',
+                           name:'input1',
+                        }
+                      ]
+                    }
+                 ]
+              }
+           ]
+         },
+          {
+           path:'/form2',
+           icon:'el-icon-tickets',
+           name:'form2',
+           children:[
+              {
+                 path:'/form1',
+                 name:'form1',
+                 title:'123322',
+                  children:[
+                    {
+                      path:'/input',
+                      name:'input',
+                      children:[
+                        {
+                           path:'/input1',
+                           name:'input1',
+                        }
+                      ]
+                    }
+                 ]
+              }
+           ]
+         },
+           {
+           path:'/form31',
+           icon:'el-icon-tickets',
+           name:'form1',
+           children:[
+              {
+                 path:'/form122',
+                 name:'form1',
+                 title:'123322',
+                  children:[
+                    {
+                      path:'/input2222',
+                      name:'input',
+                      children:[
+                        {
+                           path:'/input111111',
+                           name:'input1',
+                        }
+                      ]
+                    }
+                 ]
+              }
+           ]
+         },
+           {
+           path:'/form31222',
+           icon:'el-icon-tickets',
+           name:'form1',
+           children:[
+              {
+                 path:'/form1221111',
+                 name:'form1',
+                 title:'123322111',
+                  children:[
+                    {
+                      path:'/input211222',
+                      name:'input11',
+                      children:[
+                        {
+                           path:'/input11111111',
                            name:'input1',
                         }
                       ]
@@ -114,8 +193,8 @@ export default {
 <style scoped lang="scss">
 .ux-sidebar-tpl {
   position: fixed;
-  height: 100%;
-  z-index: 1002;
+  height: calc(100% - 50px);
+  z-index: 1000;
 }
 .min-layout {
   left: -220px;
@@ -133,6 +212,7 @@ export default {
 @media (max-width: 768px) {
   .max-layout {
     top: 0px;
+    height: 100%;
   }
 }
 .sidebar-menu {
@@ -148,4 +228,5 @@ export default {
   color: #FFFFFF;
   border-radius: 20px 0 0 20px;
 }
+
 </style>

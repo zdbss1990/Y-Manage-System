@@ -2,12 +2,12 @@
  * @Author: zhangyao
  * @Date: 2020-12-03 10:38:37
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-03 17:57:59
+ * @LastEditTime: 2020-12-04 17:14:47
 -->
 <template>
   <div class="basic-tables-tpl border-box min-height-full bg-f p-10 radius-4">
     <el-row :gutter="24">
-      <el-col :span="8" :offset="16" style="text-align: end">
+      <el-col :span="10" :offset="14" style="text-align: end">
         <el-form ref="form" inline :model="form" size="small">
           <el-form-item class="w200" prop="search">
             <el-input
@@ -21,28 +21,28 @@
               $t("button.search")
             }}</el-button>
             <el-button @click="resetSearch">{{ $t("button.reset") }}</el-button>
+            <el-button
+              class="add-btn"
+              size="small"
+              icon="el-icon-plus"
+              @click="addUser"
+              >{{ $t("button.add") }}
+            </el-button>
+            <el-dropdown v-if="select_data.length" trigger="click">
+              <el-button size="small">
+                {{ $t("button.more")
+                }}<i class="el-icon-arrow-down el-icon--right"></i>
+              </el-button>
+              <el-dropdown-menu slot="dropdown">
+                <el-dropdown-item>
+                  <div class="f-s-12" @click="deleteBatches">
+                    {{ $t("button.delete_batches") }}
+                  </div>
+                </el-dropdown-item>
+              </el-dropdown-menu>
+            </el-dropdown>
           </el-form-item>
         </el-form>
-      </el-col>
-      <el-col :span="24">
-        <el-button
-          class="add-btn"
-          size="small"
-          icon="el-icon-plus"
-          @click="addUser"
-          >{{ $t("button.add") }}
-        </el-button>
-        <el-dropdown v-if="select_data.length" trigger="click">
-          <el-button size="small">
-            {{ $t("button.more")
-            }}<i class="el-icon-arrow-down el-icon--right"></i>
-          </el-button>
-          <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item>
-              <div class="f-s-12">{{ $t("button.delete_batches") }}</div>
-            </el-dropdown-item>
-          </el-dropdown-menu>
-        </el-dropdown>
       </el-col>
       <el-col :span="24">
         <ux-table
@@ -61,7 +61,7 @@
       </el-col>
     </el-row>
     <ux-dialog
-      :dialog_title="dialog_title"
+      :dialog_title="type==='add' ? $t('basicTables.add_option'):$t('basicTables.edit_option')"
       :dialog_visible="dialog_visible"
       @handleClose="handleClose"
       @submit="submit"
@@ -118,6 +118,7 @@
   </div>
 </template>
 <script>
+import { v4 as uuidv4 } from "uuid";
 export default {
   data() {
     return {
@@ -131,9 +132,11 @@ export default {
       form: {
         search: "",
       },
+      type:'add',
       select_all: true,
       select_data: [],
-      dialog_title: this.$i18n.t("basicTables.add_option"),
+      index:0,
+      // dialog_title: ,
       dialog_visible: false,
       optForm: {
         name: "",
@@ -176,120 +179,135 @@ export default {
           age: 18,
           create_time: 1606964095306,
           status: "online",
-          sex: "男",
+          sex: "man",
           address: "上海市普陀区金沙江路 1518 号",
+          id: uuidv4(),
         },
         {
           name: "啾啾~",
           age: 23,
           create_time: 1606964095306,
           status: "online",
-          sex: "女",
+          sex: "woman",
           address: "上海市普陀区金沙江路 1517 号",
+          id: uuidv4(),
         },
         {
           name: "王小虎",
           age: 43,
           create_time: 1606964095306,
           status: "off_line",
-          sex: "男",
+          sex: "man",
           address: "上海市普陀区金沙江路 1516 号",
+          id: uuidv4(),
         },
         {
           name: "李霞",
           age: 26,
           create_time: 1606964095306,
           status: "online",
-          sex: "女",
+          sex: "woman",
           address: "上海市普陀区金沙江路 1515 号",
+          id: uuidv4(),
         },
         {
           name: "王刚",
           age: 21,
           create_time: 1606964095306,
           status: "off_line",
-          sex: "男",
+          sex: "man",
           address: "上海市普陀区金沙江路 1515 号",
+          id: uuidv4(),
         },
         {
           name: "哒哒哒2222",
           age: 18,
           create_time: 1606964095306,
           status: "online",
-          sex: "男",
+          sex: "man",
           address: "上海市普陀区金沙江路 1518 号",
+          id: uuidv4(),
         },
         {
           name: "啾啾~",
           age: 23,
           create_time: 1606964095306,
           status: "online",
-          sex: "女",
+          sex: "woman",
           address: "上海市普陀区金沙江路 1517 号",
+          id: uuidv4(),
         },
         {
           name: "王小虎",
           age: 43,
           create_time: 1606964095306,
           status: "off_line",
-          sex: "男",
+          sex: "man",
           address: "上海市普陀区金沙江路 1516 号",
+          id: uuidv4(),
         },
         {
           name: "李霞",
           age: 26,
           create_time: 1606964095306,
           status: "online",
-          sex: "女",
+          sex: "woman",
           address: "上海市普陀区金沙江路 1515 号",
+          id: uuidv4(),
         },
         {
           name: "王刚",
           age: 21,
           create_time: 1606964095306,
           status: "off_line",
-          sex: "男",
+          sex: "man",
           address: "上海市普陀区金沙江路 1515 号",
+          id: uuidv4(),
         },
         {
           name: "哒哒哒11111",
           age: 18,
           create_time: 1606964095306,
           status: "online",
-          sex: "男",
+          sex: "man",
           address: "上海市普陀区金沙江路 1518 号",
+          id: uuidv4(),
         },
         {
           name: "啾啾~",
           age: 23,
           create_time: 1606964095306,
           status: "online",
-          sex: "女",
+          sex: "woman",
           address: "上海市普陀区金沙江路 1517 号",
+          id: uuidv4(),
         },
         {
           name: "王小虎",
           age: 43,
           create_time: 1606964095306,
           status: "off_line",
-          sex: "男",
+          sex: "man",
           address: "上海市普陀区金沙江路 1516 号",
+          id: uuidv4(),
         },
         {
           name: "李霞",
           age: 26,
           create_time: 1606964095306,
           status: "online",
-          sex: "女",
+          sex: "woman",
           address: "上海市普陀区金沙江路 1515 号",
+          id: uuidv4(),
         },
         {
           name: "王刚",
           age: 21,
           create_time: 1606964095306,
           status: "off_line",
-          sex: "男",
+          sex: "man",
           address: "上海市普陀区金沙江路 1515 号",
+          id: uuidv4(),
         },
       ],
       columnData: [
@@ -302,7 +320,7 @@ export default {
         {
           prop: "sex",
           label: "sex",
-          type: "html",
+          type: "sex",
         },
         {
           prop: "status",
@@ -327,13 +345,17 @@ export default {
             {
               label: "edit",
               isDisabled: (row) => true,
-              handle: (row) => {},
+              handle: (row,index) => {
+                 this.editMsg(row,index)
+              },
             },
             {
               label: "delete",
               type: "danger",
               isDisabled: (row) => true,
-              handle: (row) => {},
+              handle: (row,index) => {
+                 this.deleteMsg(row,index)
+              },
             },
           ],
         },
@@ -392,7 +414,32 @@ export default {
     },
     //添加列表成员
     addUser() {
+      this.type='add'
       this.dialog_visible = true;
+    },
+    //批量删除
+    deleteBatches() {
+      this.$confirm(this.$i18n.t('msg.delete_item'), this.$i18n.t("msg.tips"), {
+          type: 'warning'
+        }).then(() => {
+          this.totalData = this._.differenceBy(this.totalData,this.select_data,'id');
+          this.pageOptions = {
+            currentPage: 1,
+            pageSize: 10,
+          };
+          this.handelData(this.pageOptions);
+          this.$notify({
+            title:this.$i18n.t("msg.tips"),
+            type:'success',
+            message:this.$i18n.t('msg.delete_success')
+          })
+        }).catch(() => {
+          this.$notify({
+            title:this.$i18n.t("msg.tips"),
+            type:'info',
+            message:this.$i18n.t('msg.cancel_operation')
+          })        
+        });
     },
     //关闭模态框
     handleClose(bool) {
@@ -403,24 +450,67 @@ export default {
     },
     //提交
     submit(bool) {
-       this.$refs['opt'].validate((valid) => {
-           if(valid){
-              this.totalData.unshift({...this.optForm});
-              this.handelData(this.pageOptions)
+      this.$refs["opt"].validate((valid) => {
+        if (valid) {
+          if(this.type==='add'){
+              this.totalData.unshift({ ...this.optForm, id: uuidv4() });
+              this.handelData(this.pageOptions);
               this.dialog_visible = bool;
               this.$notify({
-                  title:'提示',
-                  type:'success',
-                  message:'创建成功'
-              })
-              setTimeout(()=>{
-                    this.$refs["opt"].resetFields();
-              },500)
-           }else{
-              return false 
-           }
-       })
+                title: this.$i18n.t("msg.tips"),
+                type: "success",
+                message: this.$i18n.t("msg.create_success"),
+              });
+          }else{
+              this.$set(this.tableData,this.index,{...this.optForm})
+              this.dialog_visible = bool;
+              this.$notify({
+                title: this.$i18n.t("msg.tips"),
+                type: "success",
+                message: this.$i18n.t("msg.edit_success"),
+              });
+          }
+           setTimeout(()=>{
+            this.$refs["opt"].resetFields();
+           },500)
+        } else {
+          return false;
+        }
+      });
     },
+    //编辑
+    editMsg(row,index){
+      this.type='edit'
+      this.index=index
+      this.$nextTick(() => {
+        this.optForm =this. _.cloneDeep(row);
+      })
+      this.dialog_visible=true;
+    },
+    //删除
+    deleteMsg(row,index){
+      this.$confirm(this.$i18n.t('msg.delete_item'), this.$i18n.t("msg.tips"), {
+          type: 'warning'
+        }).then(() => {
+          this.totalData.splice(index,1)
+          this.pageOptions = {
+            currentPage: 1,
+            pageSize: 10,
+          };
+          this.handelData(this.pageOptions);
+          this.$notify({
+            title:this.$i18n.t("msg.tips"),
+            type:'success',
+            message:this.$i18n.t('msg.delete_success')
+          })
+        }).catch(() => {
+          this.$notify({
+            title:this.$i18n.t("msg.tips"),
+            type:'info',
+            message:this.$i18n.t('msg.cancel_operation')
+          })        
+        });
+    }
   },
   mounted() {
     setTimeout(() => {

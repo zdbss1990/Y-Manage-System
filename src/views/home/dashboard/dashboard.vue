@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-18 11:13:53
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-03 10:26:36
+ * @LastEditTime: 2020-12-04 14:15:09
 -->
 <template>
   <div class="ux-dashboard-tpl">
@@ -254,7 +254,7 @@
     </el-row>
     <el-row :gutter="24">
       <!-- 访问图表 -->
-      <el-col :lg="18" :md="18" class="m-t-10">
+      <el-col :lg="17" :md="17" class="m-t-10">
         <el-card>
           <div slot="header" class="clearfix">
             <span class="f-s-14 font-bold"
@@ -303,7 +303,7 @@
           ></ve-line>
         </el-card>
       </el-col>
-      <el-col :lg="6" :md="6" class="m-t-10">
+      <el-col :lg="7" :md="7" class="m-t-10">
         <!-- 当前用户总数量 -->
         <el-card>
           <div slot="header" class="clearfix">
@@ -330,7 +330,7 @@
           </div>
         </el-card>
       </el-col>
-      <el-col class="m-t-10" :lg="6" :md="6">
+      <el-col class="m-t-10" :lg="7" :md="7">
         <el-card>
           <div slot="header" class="clearfix">
             <span class="f-s-14 font-bold"
@@ -351,7 +351,7 @@
     </el-row>
     <el-row :gutter="24">
       <!-- 用户排名 -->
-      <el-col :gl="10" :md="10" class="m-t-10">
+      <el-col :gl="8" :md="8" class="m-t-10">
         <el-card>
           <div slot="header" class="clearfix font-bold">
             <span class="f-s-14"
@@ -379,7 +379,7 @@
           </ul>
         </el-card>
       </el-col>
-      <el-col :gl="6" :md="6" class="m-t-10">
+      <el-col :gl="7" :md="7" class="m-t-10">
         <el-card>
           <div slot="header" class="clearfix font-bold">
             <span class="f-s-14"
@@ -407,7 +407,7 @@
             <el-divider></el-divider>
             <div>
               <span
-                class="f-s-14 w50 inline m-l-20 m-b-5 text-center"
+                class="f-s-14 opt-btn inline m-l-20 m-b-5 text-center"
                 v-for="(btn, index) in btnList"
                 :key="index"
                 @click="toPage(btn)"
@@ -424,7 +424,7 @@
           </div>
         </el-card>
       </el-col>
-      <el-col :gl="8" :md="8" class="m-t-10">
+      <el-col :gl="9" :md="9" class="m-t-10">
         <el-card>
           <div slot="header" class="clearfix font-bold">
             <span class="f-s-14"
@@ -910,5 +910,8 @@ export default {
   &:hover {
     color: $link-color;
   }
+}
+.opt-btn{
+  width: 55px;
 }
 </style>

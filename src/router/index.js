@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-16 10:22:39
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-03 10:38:23
+ * @LastEditTime: 2020-12-04 17:28:26
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router';
@@ -38,13 +38,13 @@ const routes = [{
       ]
     },
     {
-      path:'table',
-      name: 'table',
+      path:'list',
+      name: 'list',
       redirect: {name:'basic-tables'},
       meta:{
-        title:'table'
+        title:'list'
       },
-      component: () => import( /* webpackChunkName: "Table" */ '@views/table/index.vue'),
+      component: () => import( /* webpackChunkName: "List" */ '@views/list/index.vue'),
       children:[
         {
           path: 'basic-tables',
@@ -52,7 +52,15 @@ const routes = [{
           meta:{
             title:'basic_tables'
           },
-          component: () => import( /* webpackChunkName: "BasicTables" */ '@views/table/basic-tables/basic-tables.vue')
+          component: () => import( /* webpackChunkName: "BasicTables" */ '@views/list/basic-tables/basic-tables.vue')
+        },
+        {
+          path: 'product-list',
+          name: 'product_list',
+          meta:{
+            title:'product_list'
+          },
+          component: () => import( /* webpackChunkName: "ProductList" */ '@views/list/product-list/product-list.vue')
         },
       ]
      }

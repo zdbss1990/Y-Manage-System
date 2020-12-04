@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-17 17:22:14
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-03 17:30:29
+ * @LastEditTime: 2020-12-04 17:24:51
  */
 import enLocale from 'element-ui/lib/locale/lang/en';
 
@@ -18,6 +18,11 @@ let _en = Object.assign({
         'network_error':'Network Error',
         'timeout':'Timeout',
         'tips':'Tips',
+        'create_success':'Create Success',
+        'delete_success':'Delete Success',
+        'edit_success':'Edit Success',
+        'cancel_operation':'Cancel Operation',
+        'delete_item':'This Operation Will Delete The Item Permanently. Do You Want To Continue?'
     },
     route:{
         'home':'Home',
@@ -29,7 +34,9 @@ let _en = Object.assign({
         'power':'Power',
         'upload':'Upload',
         'table':'Table',
-        'basic_tables':'Basic Tables'
+        'basic_tables':'Basic Tables',
+        'list':'List',
+        'product_list':'Product List'
     },
     status:{
         'no_time':'No Time',
@@ -44,7 +51,9 @@ let _en = Object.assign({
         'sex':'Sex',
         'status':'Status',
         'create_time':'Create Time',
-        'operation':'Operation'
+        'operation':'Operation',
+        'man':'Man',
+        'woman':'Woman',
     },
     form:{
         'name':'Name',
@@ -71,7 +80,8 @@ let _en = Object.assign({
         'more':'More Operations'
     },
     basicTables:{
-        'add_option':'Add Option'
+        'add_option':'Add Option',
+        'edit_option':'Edit Option'
     },
     dashborad:{
         'visitor_volume':'Visitor Volume',

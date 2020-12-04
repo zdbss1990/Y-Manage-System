@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-27 17:22:24
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-01 14:46:26
+ * @LastEditTime: 2020-12-04 11:00:37
 -->
 <template>
     <div>
@@ -31,14 +31,14 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.el-menu--collapse > div > .el-submenu > .el-submenu__title span {
+.el-menu--collapse>.custom-scrollbar > div > .el-submenu > .el-submenu__title span {
   height: 0;
   width: 0;
   overflow: hidden;
   visibility: hidden;
   display: inline-block;
 }
-.el-menu--collapse > div > .el-submenu > .el-submenu__title .el-submenu__icon-arrow {
+.el-menu--collapse>.custom-scrollbar  div > .el-submenu > .el-submenu__title .el-submenu__icon-arrow {
   display: none;
 }
 </style>

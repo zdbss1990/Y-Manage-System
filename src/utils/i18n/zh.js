@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-17 17:22:08
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-03 17:29:56
+ * @LastEditTime: 2020-12-04 17:24:30
  */
 import zhLocale from 'element-ui/lib/locale/lang/zh-CN'
 
@@ -18,6 +18,11 @@ let _zhCN = Object.assign({
         'network_error':'网络错误',
         'timeout':'请求超时',
         'tips':'提示',
+        'create_success':'创建成功',
+        'delete_success':'删除成功',
+        'cancel_operation':'取消操作',
+        'edit_success':'编辑成功',
+        'delete_item':'此操作将永久删除该项.是否继续?'
     },
     route:{
         'home':'主页',
@@ -29,7 +34,9 @@ let _zhCN = Object.assign({
         'power':'权限',
         'upload':'上传',
         'table':'表格',
-        'basic_tables':'基础表格'
+        'basic_tables':'基础表格',
+        'list':'列表',
+        'product_list':'商品列表'
     },
     status:{
         'no_time':'暂无',
@@ -44,7 +51,9 @@ let _zhCN = Object.assign({
         'sex':'性别',
         'status':'状态',
         'create_time':'创建时间',
-        'operation':'操作'
+        'operation':'操作',
+        'man':'男',
+        'woman':'女',
     },
     form:{
         'name':'名称',
@@ -99,7 +108,8 @@ let _zhCN = Object.assign({
         'schedule':'待办事项'
     },
     basicTables:{
-        'add_option':'添加选项'
+        'add_option':'添加选项',
+        'edit_option':'编辑选项'
     },
     errMsg:{
         'please_enter_the_name':'请输入名称',
