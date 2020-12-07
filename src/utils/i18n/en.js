@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-17 17:22:14
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-04 17:24:51
+ * @LastEditTime: 2020-12-07 16:13:34
  */
 import enLocale from 'element-ui/lib/locale/lang/en';
 
@@ -36,7 +36,8 @@ let _en = Object.assign({
         'table':'Table',
         'basic_tables':'Basic Tables',
         'list':'List',
-        'product_list':'Product List'
+        'product_list':'Product List',
+        'base_form':'Base Form'
     },
     status:{
         'no_time':'No Time',
@@ -54,6 +55,7 @@ let _en = Object.assign({
         'operation':'Operation',
         'man':'Man',
         'woman':'Woman',
+        'perfect_info':'Perfect Info'
     },
     form:{
         'name':'Name',
@@ -65,7 +67,13 @@ let _en = Object.assign({
         'off_line':'Off Line',
         'online':'Online',
         'create_time':'Create Time',
-        'address':'Address'
+        'address':'Address',
+        'hobbies_interests':'Hobbies Interests',
+        'music':'Music',
+        'drawing':'Drawing',
+        'photography':'Photography',
+        'cate':'Cate',
+        'user_avatar':'User Avatar'
     },
     button:{
         'more':'More',

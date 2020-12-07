@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-16 10:22:39
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-03 17:56:43
+ * @LastEditTime: 2020-12-07 11:43:35
  */
 import Vue from 'vue'
 import App from './App.vue'
@@ -25,7 +25,7 @@ import filters from '@utils/filters/filters.js';
 //配置v-charts
 import VCharts from 'v-charts';
 import message from '@utils/message/message.js';
-import _ from 'loadsh';
+import _ from 'lodash';
 import Sparkline from 'vue-sparklines';
 import VueAnimateNumber from 'vue-animate-number'
 Vue.component('vue-custom-scrollbar', VueCustomScrollbar)

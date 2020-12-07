@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-17 17:22:08
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-04 17:24:30
+ * @LastEditTime: 2020-12-07 16:13:49
  */
 import zhLocale from 'element-ui/lib/locale/lang/zh-CN'
 
@@ -36,7 +36,8 @@ let _zhCN = Object.assign({
         'table':'表格',
         'basic_tables':'基础表格',
         'list':'列表',
-        'product_list':'商品列表'
+        'product_list':'商品列表',
+        'base_form':'基础表单'
     },
     status:{
         'no_time':'暂无',
@@ -54,6 +55,7 @@ let _zhCN = Object.assign({
         'operation':'操作',
         'man':'男',
         'woman':'女',
+        'perfect_info':'完善信息'
     },
     form:{
         'name':'名称',
@@ -65,7 +67,13 @@ let _zhCN = Object.assign({
         'off_line':'离线',
         'online':'在线',
         'create_time':'创建时间',
-        'address':'地址'
+        'address':'地址',
+        'hobbies_interests':'兴趣爱好',
+        'music':'音乐',
+        'drawing':'画画',
+        'photography':'摄影',
+        'cate':'美食',
+        'user_avatar':'用户头像'
     },
     button:{
         'more':'更多',

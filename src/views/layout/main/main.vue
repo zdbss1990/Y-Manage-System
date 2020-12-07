@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-16 16:31:41
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-04 14:14:29
+ * @LastEditTime: 2020-12-07 09:59:09
 -->
 <template>
   <div class="uxcloud-main-tpl" :class="collapse ? 'min-layout':'max-layout'">
@@ -28,10 +28,11 @@ export default {
 </script>
 <style scoped lang="scss">
  @mixin main-tpl{
-   padding:15px;
    height: 100%;
-  //  background: red;
-   box-sizing: border-box;
+}
+.ux-view-tpl{
+  padding: 15px;
+  box-sizing: border-box;
 }
 .uxcloud-main-tpl ::v-deep .ps__rail-x{
     display: none !important;

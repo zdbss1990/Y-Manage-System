@@ -2,11 +2,15 @@
  * @Author: zhangyao
  * @Date: 2020-12-03 10:38:37
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-04 17:14:47
+ * @LastEditTime: 2020-12-07 14:41:38
 -->
 <template>
   <div class="basic-tables-tpl border-box min-height-full bg-f p-10 radius-4">
     <el-row :gutter="24">
+       <el-col :span="24">
+            <div class="f-s-18 m-b-10">{{$t('route.basic_tables')}}</div>
+            <p class="f-s-12 gray m-b-10">以表格的形式展现列表.</p>
+      </el-col>
       <el-col :span="10" :offset="14" style="text-align: end">
         <el-form ref="form" inline :model="form" size="small">
           <el-form-item class="w200" prop="search">
@@ -181,6 +185,7 @@ export default {
           status: "online",
           sex: "man",
           address: "上海市普陀区金沙江路 1518 号",
+          info:30,
           id: uuidv4(),
         },
         {
@@ -190,6 +195,7 @@ export default {
           status: "online",
           sex: "woman",
           address: "上海市普陀区金沙江路 1517 号",
+          info:10,
           id: uuidv4(),
         },
         {
@@ -199,6 +205,7 @@ export default {
           status: "off_line",
           sex: "man",
           address: "上海市普陀区金沙江路 1516 号",
+          info:100,
           id: uuidv4(),
         },
         {
@@ -208,6 +215,7 @@ export default {
           status: "online",
           sex: "woman",
           address: "上海市普陀区金沙江路 1515 号",
+          info:70,
           id: uuidv4(),
         },
         {
@@ -217,6 +225,7 @@ export default {
           status: "off_line",
           sex: "man",
           address: "上海市普陀区金沙江路 1515 号",
+          info:30,
           id: uuidv4(),
         },
         {
@@ -226,6 +235,7 @@ export default {
           status: "online",
           sex: "man",
           address: "上海市普陀区金沙江路 1518 号",
+          info:30,
           id: uuidv4(),
         },
         {
@@ -235,6 +245,7 @@ export default {
           status: "online",
           sex: "woman",
           address: "上海市普陀区金沙江路 1517 号",
+          info:30,
           id: uuidv4(),
         },
         {
@@ -244,6 +255,7 @@ export default {
           status: "off_line",
           sex: "man",
           address: "上海市普陀区金沙江路 1516 号",
+          info:30,
           id: uuidv4(),
         },
         {
@@ -253,6 +265,7 @@ export default {
           status: "online",
           sex: "woman",
           address: "上海市普陀区金沙江路 1515 号",
+          info:30,
           id: uuidv4(),
         },
         {
@@ -262,6 +275,7 @@ export default {
           status: "off_line",
           sex: "man",
           address: "上海市普陀区金沙江路 1515 号",
+          info:30,
           id: uuidv4(),
         },
         {
@@ -271,6 +285,7 @@ export default {
           status: "online",
           sex: "man",
           address: "上海市普陀区金沙江路 1518 号",
+          info:60,
           id: uuidv4(),
         },
         {
@@ -280,6 +295,7 @@ export default {
           status: "online",
           sex: "woman",
           address: "上海市普陀区金沙江路 1517 号",
+          info:30,
           id: uuidv4(),
         },
         {
@@ -289,6 +305,7 @@ export default {
           status: "off_line",
           sex: "man",
           address: "上海市普陀区金沙江路 1516 号",
+          info:30,
           id: uuidv4(),
         },
         {
@@ -298,6 +315,7 @@ export default {
           status: "online",
           sex: "woman",
           address: "上海市普陀区金沙江路 1515 号",
+          info:30,
           id: uuidv4(),
         },
         {
@@ -307,6 +325,7 @@ export default {
           status: "off_line",
           sex: "man",
           address: "上海市普陀区金沙江路 1515 号",
+          info:30,
           id: uuidv4(),
         },
       ],
@@ -331,6 +350,11 @@ export default {
           prop: "create_time",
           label: "create_time",
           type: "time",
+        },
+        {
+          prop:'info',
+          label:'perfect_info',
+          type:'progress'
         },
         {
           prop: "address",

@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-16 10:22:39
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-04 17:28:26
+ * @LastEditTime: 2020-12-07 14:22:11
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router';
@@ -62,6 +62,25 @@ const routes = [{
           },
           component: () => import( /* webpackChunkName: "ProductList" */ '@views/list/product-list/product-list.vue')
         },
+      ]
+    },
+    {
+      path:'form',
+      name:'form',
+      redirect: {name:'base-form'},
+      meta:{
+        title:'form'
+      },
+      component: () => import( /* webpackChunkName: "Form" */ '@views/form/index.vue'),
+      children:[
+        {
+          path:'base-form',
+          name:'base_form',
+          meta:{
+            title:'base_form'
+          },
+          component: () => import( /* webpackChunkName: "BaseForm" */ '@views/form/base-form/base-form.vue'),
+        }
       ]
      }
    ]
