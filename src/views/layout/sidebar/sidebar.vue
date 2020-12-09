@@ -40,127 +40,12 @@ export default {
   name: "ux-sidebar",
   data() {
     return {
-      menuData: [
-        {
-          path: "/home",
-          icon: "el-icon-s-home",
-          name: "home",
-          children: [
-            {
-              path: "/home/dashboard",
-              name: "dashboard",
-            },
-          ],
-        },
-        {
-          path: "/list",
-          icon: "el-icon-tickets",
-          name: "list",
-          children: [
-            {
-              path: "/list/basic-tables",
-              name: "basic_tables",
-            },
-            {
-              path: "/list/product-list",
-              name: "product_list",
-            },
-          ],
-        },
-        {
-          path: "/form",
-          icon: "el-icon-edit-outline",
-          name: "form",
-          children: [
-            {
-              path: "/form/base-form",
-              name: "base_form",
-            },
-          ],
-        },
-        {
-          path: "/charts",
-          icon: "el-icon-pie-chart",
-          name: "charts",
-        },
-        {
-          path: "/form2",
-          icon: "el-icon-tickets",
-          name: "form2",
-          children: [
-            {
-              path: "/form1",
-              name: "form1",
-              title: "123322",
-              children: [
-                {
-                  path: "/input",
-                  name: "input",
-                  children: [
-                    {
-                      path: "/input1",
-                      name: "input1",
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-        {
-          path: "/form31",
-          icon: "el-icon-tickets",
-          name: "form1",
-          children: [
-            {
-              path: "/form122",
-              name: "form1",
-              title: "123322",
-              children: [
-                {
-                  path: "/input2222",
-                  name: "input",
-                  children: [
-                    {
-                      path: "/input111111",
-                      name: "input1",
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-        {
-          path: "/form31222",
-          icon: "el-icon-tickets",
-          name: "form1",
-          children: [
-            {
-              path: "/form1221111",
-              name: "form1",
-              title: "123322111",
-              children: [
-                {
-                  path: "/input211222",
-                  name: "input11",
-                  children: [
-                    {
-                      path: "/input11111111",
-                      name: "input1",
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-      ],
     };
   },
   computed: mapState({
     collapse: (state) => state.layoutModule.isCollapse,
     show: (state) => state.layoutModule.show,
+    menuData:(state)=>state.authModule.menus
   }),
   methods: {
     ...mapActions(["changeMenuState", "changeCollapse"]),

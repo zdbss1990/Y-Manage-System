@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-17 17:22:08
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-07 16:13:49
+ * @LastEditTime: 2020-12-09 15:20:27
  */
 import zhLocale from 'element-ui/lib/locale/lang/zh-CN'
 
@@ -12,7 +12,8 @@ let _zhCN = Object.assign({
         'all':'全部',
         'total':'条',
         'page':'页',
-        'loading':'加载中...'
+        'loading':'加载中...',
+        'show_password':'显示密码'
     },
     msg:{
         'network_error':'网络错误',
@@ -22,6 +23,10 @@ let _zhCN = Object.assign({
         'delete_success':'删除成功',
         'cancel_operation':'取消操作',
         'edit_success':'编辑成功',
+        'set_success':'设置成功',
+        'login_success':'登陆成功',
+        'login_fail':'登录失败',
+        'exit_success':'退出成功',
         'delete_item':'此操作将永久删除该项.是否继续?'
     },
     route:{
@@ -37,7 +42,9 @@ let _zhCN = Object.assign({
         'basic_tables':'基础表格',
         'list':'列表',
         'product_list':'商品列表',
-        'base_form':'基础表单'
+        'base_form':'基础表单',
+        'substep_form':'分步表单',
+        'login':'登录'
     },
     status:{
         'no_time':'暂无',
@@ -73,7 +80,9 @@ let _zhCN = Object.assign({
         'drawing':'画画',
         'photography':'摄影',
         'cate':'美食',
-        'user_avatar':'用户头像'
+        'user_avatar':'用户头像',
+        'user_name':'用户名',
+        'password':'密码'
     },
     button:{
         'more':'更多',
@@ -85,7 +94,8 @@ let _zhCN = Object.assign({
         'search':'搜索',
         'reset':'重置',
         'delete_batches':'批量删除',
-        'more':'批量操作'
+        'more':'批量操作',
+        'signin':'登录'
     },
     dashborad:{
         'visitor_volume':'访问量',
@@ -123,7 +133,10 @@ let _zhCN = Object.assign({
         'please_enter_the_name':'请输入名称',
         'please_enter_the_link':'请输入链接',
         'please_select_time':'请选择时间',
-        'please_enter_the_address':'请输入地址'
+        'please_enter_the_address':'请输入地址',
+        'please_enter_your_userName':'请输入用户名',
+        'please_enter_the_password':'请输入密码',
+        'password_length':'密码长度在6~16之间'
      }
 },zhLocale)
 

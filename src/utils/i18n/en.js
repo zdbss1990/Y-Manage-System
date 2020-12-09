@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-17 17:22:14
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-07 16:13:34
+ * @LastEditTime: 2020-12-09 15:21:26
  */
 import enLocale from 'element-ui/lib/locale/lang/en';
 
@@ -13,6 +13,7 @@ let _en = Object.assign({
         'total':'Total',
         'loading':'Loading',
         'page':'Page',
+        'show_password':'Show Password'
     },
     msg:{
         'network_error':'Network Error',
@@ -22,6 +23,10 @@ let _en = Object.assign({
         'delete_success':'Delete Success',
         'edit_success':'Edit Success',
         'cancel_operation':'Cancel Operation',
+        'set_success':'Set Success',
+        'login_success':'Login Success',
+        'login_fail':'Login Fail',
+        'exit_success':'Exit Success',
         'delete_item':'This Operation Will Delete The Item Permanently. Do You Want To Continue?'
     },
     route:{
@@ -37,7 +42,9 @@ let _en = Object.assign({
         'basic_tables':'Basic Tables',
         'list':'List',
         'product_list':'Product List',
-        'base_form':'Base Form'
+        'base_form':'Base Form',
+        'substep_form':'Substep Form',
+        'login':'Login'
     },
     status:{
         'no_time':'No Time',
@@ -73,7 +80,9 @@ let _en = Object.assign({
         'drawing':'Drawing',
         'photography':'Photography',
         'cate':'Cate',
-        'user_avatar':'User Avatar'
+        'user_avatar':'User Avatar',
+        'user_name':'User Name',
+        'password':'Password'
     },
     button:{
         'more':'More',
@@ -85,7 +94,8 @@ let _en = Object.assign({
         'search':'Search',
         'reset':'Reset',
         'delete_batches':'Delete Batches',
-        'more':'More Operations'
+        'more':'More Operations',
+        'signin':'SignIn'
     },
     basicTables:{
         'add_option':'Add Option',
@@ -123,7 +133,10 @@ let _en = Object.assign({
        'please_enter_the_name':'Please Enter The Name',
        'please_enter_the_link':'Please Enter The Link',
        'please_select_time':'Please Select Time',
-       'please_enter_the_address':'Please Enter The Address'
+       'please_enter_the_address':'Please Enter The Address',
+       'please_enter_your_userName':'Please Enter Your UserName',
+       'please_enter_the_password':'Please Enter The Password',
+       'password_length':'The Password Length Is Between 6 And 16'
     }
 },enLocale)
 

@@ -5,17 +5,17 @@
         <span class="navbar-logo"></span>
         <a class="font-weight"><b>UXCLOUD</b></a>
         <!-- 面包屑 -->
-        <span class="header-crumbs icon iconfont icon-weibiaoti12" @click="changeMenu"></span>
+        <span class="header-crumbs el-icon-s-unfold" @click="changeMenu"></span>
         <div class="navbar-nav navbar-right">
           <!-- 更多下拉菜单 -->
           <el-dropdown trigger="click">
             <span class="el-dropdown-link">
               <el-avatar class="header-avatar" shape="square" size="small" src="https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png"></el-avatar>
-              userName<i class="el-icon-arrow-down el-icon--right"></i>
+              {{userInfo.name}}<i class="el-icon-arrow-down el-icon--right"></i>
             </span>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item>
-                <div>login out</div>
+                <div @click="logout">login out</div>
               </el-dropdown-item>
                <el-dropdown-item>
                 <div>Setting</div>
@@ -31,7 +31,7 @@
   </div>
 </template>
 <script>
-import { mapActions, mapState } from "vuex";
+import { mapActions, mapState ,mapGetters } from "vuex";
 export default {
   name: "ux-header",
   data() {
@@ -39,15 +39,20 @@ export default {
      
     };
   },
-  computed: mapState({
-    show: (state) => state.layoutModule.show,
-    language:(state)=>state.layoutModule.language
-  }),
+  computed: {
+    ...mapState({
+      show: (state) => state.layoutModule.show,
+      userInfo:(state)=>state.authModule.user,
+      language:(state)=>state.layoutModule.language,
+      menuList:(state)=>state.authModule.menuList
+    }),
+  },
+ 
   methods:{
     ...mapActions([
        'changeMenuState',
        'setLanguage',
-       'changeFixed'
+       'loginOut'
     ]),
     changeMenu(){
        //点开导航
@@ -56,9 +61,22 @@ export default {
     },
     //设置语言
     setLang(){
-      let value=sessionStorage.getItem('language')==='en' ? 'zh_CN':'en';
+      let value= this.language==='en' ? 'zh_CN':'en';
       this.$i18n.locale = value;
       this.setLanguage(value)
+      this.$_notify({
+          title:this.$i18n.t('msg.tips'),
+          type:'success',
+          message:this.$i18n.t('msg.set_success')
+      })
+    },
+    //退出登录
+    logout(){
+       this.loginOut().then(res=>{
+          this.$router.push({
+            path:'/login'
+          })
+       })
     }
   }
 };

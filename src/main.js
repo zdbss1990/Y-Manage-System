@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-16 10:22:39
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-07 11:43:35
+ * @LastEditTime: 2020-12-08 10:50:57
  */
 import Vue from 'vue'
 import App from './App.vue'
@@ -30,8 +30,8 @@ import Sparkline from 'vue-sparklines';
 import VueAnimateNumber from 'vue-animate-number'
 Vue.component('vue-custom-scrollbar', VueCustomScrollbar)
 Vue.config.productionTip = false
-Vue.prototype.$notify=notifyMsg;
-Vue.prototype.$message=message
+Vue.prototype.$_notify=notifyMsg;
+Vue.prototype.$_message=message
 Vue.prototype._=_
 Vue.use(ElementUI, {
   i18n: (key, value) => i18n.t(key, value)

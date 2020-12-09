@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-07 14:19:11
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-07 17:25:29
+ * @LastEditTime: 2020-12-07 17:57:33
 -->
 <template>
   <div class="base-form border-box min-height-full bg-f p-10 radius-4">
@@ -97,7 +97,7 @@
             ></el-input>
           </el-form-item>
           <el-form-item>
-                <el-button type="primary" @click="onSubmit">立即创建</el-button>
+                <el-button type="primary">立即创建</el-button>
                <el-button>取消</el-button>
           </el-form-item>
         </el-form>

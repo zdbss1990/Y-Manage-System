@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-03 10:38:37
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-07 14:41:38
+ * @LastEditTime: 2020-12-08 10:51:58
 -->
 <template>
   <div class="basic-tables-tpl border-box min-height-full bg-f p-10 radius-4">
@@ -452,13 +452,13 @@ export default {
             pageSize: 10,
           };
           this.handelData(this.pageOptions);
-          this.$notify({
+          this.$_notify({
             title:this.$i18n.t("msg.tips"),
             type:'success',
             message:this.$i18n.t('msg.delete_success')
           })
         }).catch(() => {
-          this.$notify({
+          this.$_notify({
             title:this.$i18n.t("msg.tips"),
             type:'info',
             message:this.$i18n.t('msg.cancel_operation')
@@ -480,7 +480,7 @@ export default {
               this.totalData.unshift({ ...this.optForm, id: uuidv4() });
               this.handelData(this.pageOptions);
               this.dialog_visible = bool;
-              this.$notify({
+              this.$_notify({
                 title: this.$i18n.t("msg.tips"),
                 type: "success",
                 message: this.$i18n.t("msg.create_success"),
@@ -488,7 +488,7 @@ export default {
           }else{
               this.$set(this.tableData,this.index,{...this.optForm})
               this.dialog_visible = bool;
-              this.$notify({
+              this.$_notify({
                 title: this.$i18n.t("msg.tips"),
                 type: "success",
                 message: this.$i18n.t("msg.edit_success"),
@@ -522,13 +522,13 @@ export default {
             pageSize: 10,
           };
           this.handelData(this.pageOptions);
-          this.$notify({
+          this.$_notify({
             title:this.$i18n.t("msg.tips"),
             type:'success',
             message:this.$i18n.t('msg.delete_success')
           })
         }).catch(() => {
-          this.$notify({
+          this.$_notify({
             title:this.$i18n.t("msg.tips"),
             type:'info',
             message:this.$i18n.t('msg.cancel_operation')

@@ -1,3 +1,9 @@
+/*
+ * @Author: zhangyao
+ * @Date: 2020-11-18 14:48:50
+ * @LastEditors: zhangyao
+ * @LastEditTime: 2020-12-08 10:57:04
+ */
 import server from './methods';
 //引入notify
 import notify from '@utils/notify/notify.js';
@@ -16,14 +22,15 @@ class Service{
         this.nowHandle=commponent
         return this
     }
-    sendMsg(moduleName,name,url,config,config_load={}){
+    sendMsg(moduleName,name,url,config){
        let configs=config || {};
        let type=config.type || 'get';
        let data=config.data || {};
+       let loadingName=config.loadingName || '';
        let self=this;
        //请求前
        let before=()=>{
-           if(config_load['loadingName']) this.nowHandle[config_load.loadingName]=true
+           if(loadingName) this.nowHandle[loadingName]=true
            self[moduleName][name].state=true
            return null
        }
@@ -34,7 +41,7 @@ class Service{
        }
 
        let defaultErrorFn=(err)=>{
-           if(config_load['loadingName']) this.nowHandle[config_load.loadingName]=false
+           if(loadingName) this.nowHandle[loadingName]=false
            self[moduleName][name].state=false;
            if(err.data){
               notify({
@@ -59,7 +66,6 @@ class Service{
        }
        const state=(type)=>{
           let req=type==='get'? {params:data}:type==='delete'?{data:data}:data;
-          console.log(server[type](url,req))
           return server[type](url,req).then(before()).then(callback).catch(errCallBack)
        }
        if(!self[moduleName][name].state){

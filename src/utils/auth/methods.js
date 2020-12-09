@@ -1,10 +1,16 @@
+/*
+ * @Author: zhangyao
+ * @Date: 2020-11-18 10:33:35
+ * @LastEditors: zhangyao
+ * @LastEditTime: 2020-12-08 11:07:37
+ */
 import axios from 'axios';
 import headers from './headers';
 //引入notify
 import notify from '@utils/notify/notify.js';
 import i18n from '@utils/i18n/index.js';
 const server=axios.create({
-    baseURL:process.env.VUE_APP_BASE_API,
+    baseURL:`${process.env.VUE_APP_BASE_API}/master/v1/identity`,
     timeout:3000,
 })
 //请求拦截 添加全局loading
