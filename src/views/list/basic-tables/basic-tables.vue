@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-03 10:38:37
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-08 10:51:58
+ * @LastEditTime: 2020-12-10 10:40:51
 -->
 <template>
   <div class="basic-tables-tpl border-box min-height-full bg-f p-10 radius-4">
@@ -30,7 +30,8 @@
               size="small"
               icon="el-icon-plus"
               @click="addUser"
-              >{{ $t("button.add") }}
+              v-has="'admin'"
+              >{{ $t("button.add")}}
             </el-button>
             <el-dropdown v-if="select_data.length" trigger="click">
               <el-button size="small">
@@ -123,6 +124,7 @@
 </template>
 <script>
 import { v4 as uuidv4 } from "uuid";
+import { mapState } from 'vuex';
 export default {
   data() {
     return {
@@ -376,7 +378,9 @@ export default {
             {
               label: "delete",
               type: "danger",
-              isDisabled: (row) => true,
+              isDisabled: (row) => {
+                return this.user_action.includes('admin')
+              },
               handle: (row,index) => {
                  this.deleteMsg(row,index)
               },
@@ -386,6 +390,9 @@ export default {
       ],
     };
   },
+  computed:mapState({
+      user_action:state=>state.authModule.roles
+  }),
   methods: {
     //每页条目数改变
     handleSizeChange(size) {

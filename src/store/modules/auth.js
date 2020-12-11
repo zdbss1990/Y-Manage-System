@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-08 10:59:10
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-09 17:32:45
+ * @LastEditTime: 2020-12-10 16:51:02
  */
 import {
     getSession,
@@ -127,8 +127,8 @@ const authModule = {
                     success:(res)=>{
                        if(res){
                         notify({
-                            title: i18n.t('msg.success'),
-                            type: 'error',
+                            title: i18n.t('msg.tips'),
+                            type: 'success',
                             message: i18n.t('msg.exit_success')
                         })
                          sessionStorage.clear()
@@ -141,8 +141,8 @@ const authModule = {
         //其获取用户信息
         getUserInfo({commit,state}){
             //   commit('SET_USER_TYPE',state.user.type)
-              commit('SET_USER_TYPE',['user'])
-              return ['user']
+              commit('SET_USER_TYPE',['user','admin'])
+              return ['user','admin']
             //   return state.user.type
         },
         async getNewRoute({commit,state},auths){

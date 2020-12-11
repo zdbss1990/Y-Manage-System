@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-16 10:22:39
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-08 10:50:57
+ * @LastEditTime: 2020-12-11 16:47:56
  */
 import Vue from 'vue'
 import App from './App.vue'
@@ -22,13 +22,16 @@ import notifyMsg from '@utils/notify/notify.js';
 import '@/components';
 //filters
 import filters from '@utils/filters/filters.js';
+import directives from '@utils/directives/directives.js'
 //配置v-charts
 import VCharts from 'v-charts';
 import message from '@utils/message/message.js';
 import _ from 'lodash';
 import Sparkline from 'vue-sparklines';
-import VueAnimateNumber from 'vue-animate-number'
+import VueAnimateNumber from 'vue-animate-number';
+import VueApexCharts from 'vue-apexcharts'
 Vue.component('vue-custom-scrollbar', VueCustomScrollbar)
+Vue.component('apexchart', VueApexCharts)
 Vue.config.productionTip = false
 Vue.prototype.$_notify=notifyMsg;
 Vue.prototype.$_message=message
@@ -38,8 +41,10 @@ Vue.use(ElementUI, {
 });
 Vue.use(VCharts)
 Vue.use(filters)
+Vue.use(directives)
 Vue.use(Sparkline)
 Vue.use(VueAnimateNumber)
+Vue.use(VueApexCharts)
 new Vue({
   router,
   store,

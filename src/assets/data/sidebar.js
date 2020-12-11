@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-09 16:02:38
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-09 16:03:08
+ * @LastEditTime: 2020-12-11 17:01:11
  */
 const menuList=[
     {
@@ -50,7 +50,17 @@ const menuList=[
         path: "/charts",
         icon: "el-icon-pie-chart",
         name: "charts",
-      }
+        children: [
+          {
+            path: "/charts/v-charts",
+            name: "v_charts",
+          },
+          {
+            path: "/charts/apex-charts",
+            name: "apex_charts",
+          }
+        ]
+      },
 ]
 
 export default menuList

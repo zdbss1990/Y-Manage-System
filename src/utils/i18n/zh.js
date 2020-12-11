@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-17 17:22:08
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-09 15:20:27
+ * @LastEditTime: 2020-12-11 16:53:02
  */
 import zhLocale from 'element-ui/lib/locale/lang/zh-CN'
 
@@ -44,7 +44,9 @@ let _zhCN = Object.assign({
         'product_list':'商品列表',
         'base_form':'基础表单',
         'substep_form':'分步表单',
-        'login':'登录'
+        'login':'登录',
+        'v_charts':'v-charts',
+        'apex_charts':'apex-charts'
     },
     status:{
         'no_time':'暂无',
@@ -82,7 +84,15 @@ let _zhCN = Object.assign({
         'cate':'美食',
         'user_avatar':'用户头像',
         'user_name':'用户名',
-        'password':'密码'
+        'password':'密码',
+        'create_user':'创建账户',
+        'fill_in_contact_info':'填写联系信息',
+        'finish':'完成',
+        'password':'密码',
+        'checkpass':'确认密码',
+        'phone_number':'手机号',
+        'email':'邮箱',
+        'captcha':'验证码'
     },
     button:{
         'more':'更多',
@@ -95,7 +105,9 @@ let _zhCN = Object.assign({
         'reset':'重置',
         'delete_batches':'批量删除',
         'more':'批量操作',
-        'signin':'登录'
+        'signin':'登录',
+        'next':'下一步',
+        'prev_step':'上一步'
     },
     dashborad:{
         'visitor_volume':'访问量',
@@ -136,6 +148,8 @@ let _zhCN = Object.assign({
         'please_enter_the_address':'请输入地址',
         'please_enter_your_userName':'请输入用户名',
         'please_enter_the_password':'请输入密码',
+        'please_enter_the_password_again':'请再次输入密码',
+        'the_two_passwords_do_not_agree':'两次输入密码不一致',
         'password_length':'密码长度在6~16之间'
      }
 },zhLocale)

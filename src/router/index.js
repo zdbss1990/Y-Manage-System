@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-16 10:22:39
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-09 17:31:19
+ * @LastEditTime: 2020-12-11 16:52:28
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router';
@@ -77,6 +77,38 @@ export const authRoutes = [
           },
           component: () => import( /* webpackChunkName: "ProductList" */ '@views/list/product-list/product-list.vue')
         },
+      ]
+    },
+    {
+      path:'/charts',
+      name: 'charts',
+      redirect: {
+        name: 'v-charts'
+      },
+      meta: {
+        title: 'form',
+         role:['user']
+       },
+      component: () => import( /* webpackChunkName: "Charts" */ '@views/charts/index.vue'),
+      children:[
+        {
+          path:'v-charts',
+          name: 'v_charts',
+          meta: {
+            title: 'v_charts',
+            role:['user']
+          },
+          component: () => import( /* webpackChunkName: "VCharts" */ '@views/charts/v-charts/v-charts.vue'),
+        },
+        {
+          path:'apex-charts',
+          name: 'apex_charts',
+          meta: {
+            title:'apex_charts',
+            role:['user']
+          },
+          component: () => import( /* webpackChunkName: "ApexCharts" */ '@views/charts/apex-charts/apex-charts.vue'),
+        }
       ]
     },
     {

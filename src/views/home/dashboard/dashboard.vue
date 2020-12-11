@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-18 11:13:53
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-04 14:15:09
+ * @LastEditTime: 2020-12-10 10:53:05
 -->
 <template>
   <div class="ux-dashboard-tpl">
@@ -878,8 +878,10 @@ export default {
       }
     }, 1000);
     window.addEventListener("resize", () => {
-      this.$refs["charts"].echartsResize();
-      this.$refs["ring"].echartsResize();
+      if(this.$refs["charts"] && this.$refs["ring"]){
+            this.$refs["charts"].echartsResize();
+            this.$refs["ring"].echartsResize();
+      }
     });
   },
 };

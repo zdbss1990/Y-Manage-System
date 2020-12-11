@@ -31,6 +31,7 @@
 .m-r-5{
    margin-right: 5px;
 }
+
 .m-b-10{
    margin-bottom: 10px;
 }
@@ -128,11 +129,17 @@
 .danger{
    color: $danger;
 }
+.text-f{
+   color: $fff !important;
+}
 .inline{
    display: inline-block;
 }
 .gray{
    color: $gray;
+}
+.bg-gray{
+   background: #F5F7FA;
 }
 .bg-f{
    background: $fff;

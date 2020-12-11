@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-17 17:22:14
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-09 15:21:26
+ * @LastEditTime: 2020-12-11 16:53:12
  */
 import enLocale from 'element-ui/lib/locale/lang/en';
 
@@ -44,7 +44,9 @@ let _en = Object.assign({
         'product_list':'Product List',
         'base_form':'Base Form',
         'substep_form':'Substep Form',
-        'login':'Login'
+        'login':'Login',
+        'v_charts':'v-charts',
+        'apex_charts':'apex-charts'
     },
     status:{
         'no_time':'No Time',
@@ -82,7 +84,15 @@ let _en = Object.assign({
         'cate':'Cate',
         'user_avatar':'User Avatar',
         'user_name':'User Name',
-        'password':'Password'
+        'password':'Password',
+        'create_user':'Create User',
+        'fill_in_contact_info':'Fill In Contact Infor',
+        'finish':'Finish',
+        'password':'Password',
+        'checkpass':'Checkpass',
+        'phone_number':'Phone Number',
+        'email':'Email',
+        'captcha':'CAPTCHA'
     },
     button:{
         'more':'More',
@@ -95,7 +105,9 @@ let _en = Object.assign({
         'reset':'Reset',
         'delete_batches':'Delete Batches',
         'more':'More Operations',
-        'signin':'SignIn'
+        'signin':'SignIn',
+        'next':'Next',
+        'prev_step':'Prev Step'
     },
     basicTables:{
         'add_option':'Add Option',
@@ -136,6 +148,8 @@ let _en = Object.assign({
        'please_enter_the_address':'Please Enter The Address',
        'please_enter_your_userName':'Please Enter Your UserName',
        'please_enter_the_password':'Please Enter The Password',
+       'please_enter_the_password_again':'Please Enter The Password Again',
+       'the_two_passwords_do_not_agree':'The Two Passwords Do Not Agree',
        'password_length':'The Password Length Is Between 6 And 16'
     }
 },enLocale)

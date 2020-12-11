@@ -2,16 +2,16 @@
  * @Author: zhangyao
  * @Date: 2020-12-07 14:19:11
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-07 17:57:33
+ * @LastEditTime: 2020-12-10 10:58:12
 -->
 <template>
   <div class="base-form border-box min-height-full bg-f p-10 radius-4">
     <el-row :gutter="24">
       <el-col :span="24">
         <div class="f-s-18 m-b-10">{{ $t("route.base_form") }}</div>
-        <p class="f-s-12 gray m-b-10">以表格的形式展现列表.</p>
+        <p class="f-s-12 gray m-b-10">以基础的方式展现表单.</p>
       </el-col>
-      <el-col :span="10" :offset="1">
+      <el-col :lg="10" :md="10" :span="23" :offset="1">
         <el-form
           label-position="right"
           :model="ruleForm"
