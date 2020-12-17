@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-17 17:22:14
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-11 16:53:12
+ * @LastEditTime: 2020-12-17 15:58:31
  */
 import enLocale from 'element-ui/lib/locale/lang/en';
 
@@ -46,7 +46,9 @@ let _en = Object.assign({
         'substep_form':'Substep Form',
         'login':'Login',
         'v_charts':'v-charts',
-        'apex_charts':'apex-charts'
+        'apex_charts':'apex-charts',
+        'fusion_chart_map':'fusionChart-map',
+        'baidu_maps':'baidu-maps'
     },
     status:{
         'no_time':'No Time',

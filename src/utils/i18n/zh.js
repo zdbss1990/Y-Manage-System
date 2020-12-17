@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-17 17:22:08
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-11 16:53:02
+ * @LastEditTime: 2020-12-17 16:31:02
  */
 import zhLocale from 'element-ui/lib/locale/lang/zh-CN'
 
@@ -46,7 +46,9 @@ let _zhCN = Object.assign({
         'substep_form':'分步表单',
         'login':'登录',
         'v_charts':'v-charts',
-        'apex_charts':'apex-charts'
+        'apex_charts':'apex-charts',
+        'fusion_chart_map':'fusionChart-map',
+        'baidu_maps':'百度地图'
     },
     status:{
         'no_time':'暂无',

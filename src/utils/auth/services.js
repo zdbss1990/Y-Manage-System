@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-18 14:48:50
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-08 10:57:04
+ * @LastEditTime: 2020-12-17 10:07:38
  */
 import server from './methods';
 //引入notify
@@ -53,7 +53,7 @@ class Service{
            }
        }
        //成功
-       let success=configs.success || defauleFn
+       let success=configs.success || defauleFn;
        //失败
        let error=configs.error || defaultErrorFn;
        let callback=(res)=>{

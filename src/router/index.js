@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-16 10:22:39
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-11 16:52:28
+ * @LastEditTime: 2020-12-17 15:55:55
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router';
@@ -86,7 +86,7 @@ export const authRoutes = [
         name: 'v-charts'
       },
       meta: {
-        title: 'form',
+         title: 'charts',
          role:['user']
        },
       component: () => import( /* webpackChunkName: "Charts" */ '@views/charts/index.vue'),
@@ -108,7 +108,25 @@ export const authRoutes = [
             role:['user']
           },
           component: () => import( /* webpackChunkName: "ApexCharts" */ '@views/charts/apex-charts/apex-charts.vue'),
-        }
+        },
+        {
+           path:'fusion-chart-map',
+           name:'fusion_chart_map',
+           meta: {
+            title:'fusion_chart_map',
+            role:['user']
+          },
+          component: () => import( /* webpackChunkName: "FusionChartMap" */ '@views/charts/fusion-chart-map/fusion-chart-map.vue'),
+        },
+        {
+          path:'baidu-maps',
+          name:'baidu_maps',
+          meta: {
+           title:'baidu_maps',
+           role:['user']
+         },
+         component: () => import( /* webpackChunkName: "BaiduMaps" */ '@views/charts/baidu-maps/baidu-maps.vue'),
+       }
       ]
     },
     {

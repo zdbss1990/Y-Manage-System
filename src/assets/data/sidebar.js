@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-09 16:02:38
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-11 17:01:11
+ * @LastEditTime: 2020-12-17 15:57:58
  */
 const menuList=[
     {
@@ -58,6 +58,14 @@ const menuList=[
           {
             path: "/charts/apex-charts",
             name: "apex_charts",
+          },
+          {
+            path: "/charts/fusion-chart-map",
+            name: "fusion_chart_map",
+          },
+          {
+            path:'/charts/baidu-maps',
+            name: "baidu_maps",
           }
         ]
       },

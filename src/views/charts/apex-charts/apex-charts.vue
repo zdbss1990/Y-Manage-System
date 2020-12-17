@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-11 16:49:01
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-11 18:07:17
+ * @LastEditTime: 2020-12-14 10:24:35
 -->
 <template>
   <div class="apex-charts-tpl border-box min-height-full">
@@ -62,9 +62,15 @@
           ></apexchart>
         </ux-panel>
       </el-col>
-       <el-col :lg="12" :md="12" :xs="24" class="charts-content">
+      <el-col :lg="12" :md="12" :xs="24" class="charts-content">
         <ux-panel>
-          <span slot="title">polarArea</span>
+          <span slot="title">pie</span>
+          <apexchart
+            type="pie"
+            height="280"
+            :options="pieChartOptions"
+            :series="pieSeries"
+          ></apexchart>
         </ux-panel>
       </el-col>
     </el-row>
@@ -88,7 +94,6 @@ export default {
         });
         i++;
       }
-      console.log(series);
       return series;
     }
     return {
@@ -323,7 +328,7 @@ export default {
         dataLabels: {
           enabled: false,
         },
-        colors: ["#008FFB"]
+        colors: ["#008FFB"],
       },
       //radiaBar
       radialBarSeries: [76, 67, 61, 90],
@@ -333,7 +338,7 @@ export default {
         },
         plotOptions: {
           radialBar: {
-            offsetY: 0,
+            offsetY: 30,
             startAngle: 0,
             endAngle: 270,
             hollow: {
@@ -359,8 +364,8 @@ export default {
           floating: true,
           fontSize: "16px",
           position: "left",
-          offsetX: 200,
-          offsetY: 0,
+          offsetX: 210,
+          offsetY: 30,
           labels: {
             useSeriesColors: true,
           },
@@ -384,7 +389,24 @@ export default {
             },
           },
         ],
-        //polarArea
+      },
+      pieSeries: [44, 55, 13, 43, 22],
+      pieChartOptions: {
+        chart: {
+          type: "pie",
+          offsetX: 10,
+          offsetY:30
+        },
+        labels: ["Team A", "Team B", "Team C", "Team D", "Team E"],
+        responsive: [
+          {
+            options: {
+              legend: {
+                offsetX:-40
+              },
+            },
+          },
+        ],
       },
     };
   },
