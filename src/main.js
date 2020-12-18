@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-16 10:22:39
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-15 17:22:50
+ * @LastEditTime: 2020-12-18 15:29:07
  */
 import Vue from 'vue'
 import App from './App.vue'
@@ -36,7 +36,11 @@ import Maps from 'fusioncharts/fusioncharts.maps'
 import World from 'fusioncharts/maps/fusioncharts.world'
 //import the theme
 import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
-import BaiduMap from 'vue-baidu-map'
+import BaiduMap from 'vue-baidu-map';
+import VueQuillEditor from 'vue-quill-editor';
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
 Vue.component('vue-custom-scrollbar', VueCustomScrollbar)
 Vue.component('apexchart', VueApexCharts)
 Vue.use(VueFusionCharts,FusionCharts,Maps,World,FusionTheme)
@@ -51,6 +55,7 @@ Vue.use(BaiduMap, {
   // ak 是在百度地图开发者平台申请的密钥 详见 http://lbsyun.baidu.com/apiconsole/key */
   ak: 'nfnmPY9m2TtXtBlHHANKAlg5azYLGxbC'
 })
+Vue.use(VueQuillEditor)
 Vue.use(VCharts)
 Vue.use(filters)
 Vue.use(directives)

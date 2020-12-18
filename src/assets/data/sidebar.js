@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-09 16:02:38
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-17 15:57:58
+ * @LastEditTime: 2020-12-17 17:47:59
  */
 const menuList=[
     {
@@ -69,6 +69,21 @@ const menuList=[
           }
         ]
       },
+      {
+        path:"/editor",
+        icon:'el-icon-edit',
+        name: "editor",
+        children: [
+          {
+            path: "/editor/quill-editor",
+            name: "quill_editor",
+          },
+          {
+            path: "/editor/markdown",
+            name: "markdown",
+          }
+        ]
+      }
 ]
 
 export default menuList

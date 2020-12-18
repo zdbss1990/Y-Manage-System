@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-17 17:22:08
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-17 16:31:02
+ * @LastEditTime: 2020-12-17 17:48:15
  */
 import zhLocale from 'element-ui/lib/locale/lang/zh-CN'
 
@@ -48,7 +48,10 @@ let _zhCN = Object.assign({
         'v_charts':'v-charts',
         'apex_charts':'apex-charts',
         'fusion_chart_map':'fusionChart-map',
-        'baidu_maps':'百度地图'
+        'baidu_maps':'百度地图',
+        'editor':'编辑器',
+        'quill_editor':'富文本',
+        'markdown':'Markdown'
     },
     status:{
         'no_time':'暂无',

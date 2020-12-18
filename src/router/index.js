@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-16 10:22:39
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-17 15:55:55
+ * @LastEditTime: 2020-12-17 17:50:15
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router';
@@ -80,6 +80,37 @@ export const authRoutes = [
       ]
     },
     {
+      path: '/form',
+      name: 'form',
+      redirect: {
+        name: 'base-form'
+      },
+      meta: {
+        title: 'form',
+        role:['user']
+      },
+      component: () => import( /* webpackChunkName: "Form" */ '@views/form/index.vue'),
+      children: [{
+          path: 'base-form',
+          name: 'base_form',
+          meta: {
+            title: 'base_form',
+            role:['user']
+          },
+          component: () => import( /* webpackChunkName: "BaseForm" */ '@views/form/base-form/base-form.vue'),
+        },
+        {
+          path: 'substep-form',
+          name: 'substep_form',
+          meta: {
+            title: 'substep_form',
+            role:['user']
+          },
+          component: () => import( /* webpackChunkName: "SubstepForm" */ '@views/form/substep-form/substep-form.vue'),
+        }
+      ]
+    },
+    {
       path:'/charts',
       name: 'charts',
       redirect: {
@@ -130,34 +161,35 @@ export const authRoutes = [
       ]
     },
     {
-      path: '/form',
-      name: 'form',
+      path:'/editor',
+      name:'editor',
       redirect: {
-        name: 'base-form'
+        name: 'quill_editor'
       },
       meta: {
-        title: 'form',
-        role:['user']
-      },
-      component: () => import( /* webpackChunkName: "Form" */ '@views/form/index.vue'),
-      children: [{
-          path: 'base-form',
-          name: 'base_form',
-          meta: {
-            title: 'base_form',
-            role:['user']
+         title: 'editor',
+         role:['user']
+       },
+      component: () => import( /* webpackChunkName: "Editor" */ '@views/editor/index.vue'),
+      children:[
+          {
+            path:'quill-editor',
+            name: 'quill_editor',
+            meta: {
+              title: 'quill_editor',
+              role:['user']
+            },
+            component: () => import( /* webpackChunkName: "QuillEditor" */ '@views/editor/quill-editor/quill-editor.vue'),
           },
-          component: () => import( /* webpackChunkName: "BaseForm" */ '@views/form/base-form/base-form.vue'),
-        },
-        {
-          path: 'substep-form',
-          name: 'substep_form',
-          meta: {
-            title: 'substep_form',
-            role:['user']
+          {
+            path:'markdown',
+            name: 'markdown',
+            meta: {
+              title: 'markdown',
+              role:['user']
+            },
+            component: () => import( /* webpackChunkName: "Markdown" */ '@views/editor/markdown/markdown.vue'),
           },
-          component: () => import( /* webpackChunkName: "SubstepForm" */ '@views/form/substep-form/substep-form.vue'),
-        }
       ]
     },
     {
