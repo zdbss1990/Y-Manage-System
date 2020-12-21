@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-17 17:22:14
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-17 17:48:25
+ * @LastEditTime: 2020-12-21 10:08:48
  */
 import enLocale from 'element-ui/lib/locale/lang/en';
 
@@ -51,7 +51,9 @@ let _en = Object.assign({
         'baidu_maps':'Baidu Maps',
         'editor':'editor',
         'quill_editor':'Quill Editor',
-        'markdown':'Markdown'
+        'markdown':'Markdown',
+        'abnormal_page':'Abnormal Page',
+        '404':'404'
     },
     status:{
         'no_time':'No Time',

@@ -1,11 +1,11 @@
 <!--
  * @Author: zhangyao
- * @Date: 2020-12-08 10:07:30
+ * @Date: 2020-12-21 09:59:06
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-08 10:08:38
+ * @LastEditTime: 2020-12-21 09:59:48
 -->
 <template>
-    <div>404</div>
+    <router-view></router-view>
 </template>
 <script>
 export default {
@@ -16,4 +16,3 @@ export default {
     }
 }
 </script>
-<style lang="scss" scoped></style>

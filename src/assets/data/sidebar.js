@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-09 16:02:38
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-17 17:47:59
+ * @LastEditTime: 2020-12-21 10:32:01
  */
 const menuList=[
     {
@@ -81,6 +81,17 @@ const menuList=[
           {
             path: "/editor/markdown",
             name: "markdown",
+          }
+        ]
+      },
+      {
+        path:"/abnormal-page",
+        icon:'el-icon-warning',
+        name: "abnormal_page",
+        children: [
+          {
+            path: "/abnormal-page/404",
+            name: "404",
           }
         ]
       }

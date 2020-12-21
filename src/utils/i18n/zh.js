@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-17 17:22:08
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-17 17:48:15
+ * @LastEditTime: 2020-12-21 10:08:39
  */
 import zhLocale from 'element-ui/lib/locale/lang/zh-CN'
 
@@ -51,7 +51,9 @@ let _zhCN = Object.assign({
         'baidu_maps':'百度地图',
         'editor':'编辑器',
         'quill_editor':'富文本',
-        'markdown':'Markdown'
+        'markdown':'Markdown',
+        'abnormal_page':'异常页面',
+        '404':'404'
     },
     status:{
         'no_time':'暂无',

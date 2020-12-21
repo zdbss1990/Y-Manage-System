@@ -2,12 +2,12 @@
  * @Author: zhangyao
  * @Date: 2020-11-16 10:22:39
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-17 17:50:15
+ * @LastEditTime: 2020-12-21 10:10:35
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router';
 import Layout from '@/views/layout/layout/layout.vue';
-import NotFound from '@/views/not-found/not-found.vue';
+import NotFound from '@/views/abnormal-page/not-found/not-found.vue';
 import Login from '@/views/login/login.vue';
 import getPageTitle from '@utils/title/index.js';
 import NProgress from 'nprogress';
@@ -190,6 +190,29 @@ export const authRoutes = [
             },
             component: () => import( /* webpackChunkName: "Markdown" */ '@views/editor/markdown/markdown.vue'),
           },
+      ]
+    },
+    {
+      path:'/abnormal-page',
+      name:'abnormal_page',
+      redirect: {
+        name: '404'
+      },
+      meta: {
+         title: 'abnormal_page',
+         role:['user']
+      },
+      component: () => import( /* webpackChunkName: "AbnormalPage" */ '@views/abnormal-page/index.vue'),
+      children:[
+         {
+            path:'404',
+            name: '404',
+            meta: {
+              title: '404',
+              role:['user']
+            },
+            component: () => import( /* webpackChunkName: "404" */ '@views/abnormal-page/not-found/not-found.vue')
+         }
       ]
     },
     {
