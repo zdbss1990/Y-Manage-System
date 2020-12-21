@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-16 10:22:39
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-21 10:10:35
+ * @LastEditTime: 2020-12-21 15:15:51
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router';
@@ -213,6 +213,38 @@ export const authRoutes = [
             },
             component: () => import( /* webpackChunkName: "404" */ '@views/abnormal-page/not-found/not-found.vue')
          }
+      ]
+    },
+    {
+      path:'/module',
+      name:'module',
+      redirect:{
+        name:'module'
+      },
+      meta:{
+         title:'module',
+         role:['user']
+      },
+      component: () => import( /* webpackChunkName: "Module" */ '@views/module/index.vue'),
+      children:[
+        {
+          path:'video',
+          name: 'video',
+          meta: {
+            title: 'video',
+            role:['user']
+          },
+          component: () => import( /* webpackChunkName: "Video" */ '@views/module/video/video.vue')
+        },
+        {
+          path:'upload',
+          name: 'upload',
+          meta: {
+            title: 'upload',
+            role:['user']
+          },
+          component: () => import( /* webpackChunkName: "Upload" */ '@views/module/upload/upload.vue')
+        }
       ]
     },
     {

@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-17 17:22:14
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-21 10:08:48
+ * @LastEditTime: 2020-12-21 15:17:19
  */
 import enLocale from 'element-ui/lib/locale/lang/en';
 
@@ -53,7 +53,10 @@ let _en = Object.assign({
         'quill_editor':'Quill Editor',
         'markdown':'Markdown',
         'abnormal_page':'Abnormal Page',
-        '404':'404'
+        '404':'404',
+        'module':'Module',
+        'video':'Video',
+        'upload':'Upload'
     },
     status:{
         'no_time':'No Time',

@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-16 10:22:39
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-18 15:29:07
+ * @LastEditTime: 2020-12-21 15:14:00
  */
 import Vue from 'vue'
 import App from './App.vue'
@@ -38,6 +38,10 @@ import World from 'fusioncharts/maps/fusioncharts.world'
 import FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
 import BaiduMap from 'vue-baidu-map';
 import VueQuillEditor from 'vue-quill-editor';
+import VueVideoPlayer from 'vue-video-player';
+import VueCropper from 'vue-cropper';
+import uploader from 'vue-simple-uploader'
+import 'video.js/dist/video-js.css'
 import 'quill/dist/quill.core.css'
 import 'quill/dist/quill.snow.css'
 import 'quill/dist/quill.bubble.css'
@@ -61,7 +65,10 @@ Vue.use(filters)
 Vue.use(directives)
 Vue.use(Sparkline)
 Vue.use(VueAnimateNumber)
-Vue.use(VueApexCharts)
+Vue.use(VueApexCharts);
+Vue.use(VueVideoPlayer)
+Vue.use(VueCropper)
+Vue.use(uploader)
 new Vue({
   router,
   store,

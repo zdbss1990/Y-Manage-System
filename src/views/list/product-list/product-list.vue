@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-04 17:25:15
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-07 14:40:16
+ * @LastEditTime: 2020-12-21 11:49:58
 -->
 <template>
     <div class="product-list-tpl border-box min-height-full bg-f p-10 radius-4">
@@ -88,8 +88,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 .product-img{
-    width: 60%;
-    height: 60%;
+    width: 80%;
+    height: 80%;
 }
 .product-card{
     position: relative;
@@ -98,12 +98,22 @@ export default {
     position: absolute;
     top:10px;
     right: 5px;
+    z-index: 100;
 }
 .pre{
     color: $warning;
 }
 .des{
    color: $gray;
+}
+.product-content{
+    overflow: hidden;
+}
+.product-img{
+    &:hover{
+        transition: all .5s ease;
+        transform: scale(1.5);
+    }
 }
 
 </style>

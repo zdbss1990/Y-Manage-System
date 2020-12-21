@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-09 16:02:38
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-21 10:32:01
+ * @LastEditTime: 2020-12-21 15:16:47
  */
 const menuList=[
     {
@@ -92,6 +92,21 @@ const menuList=[
           {
             path: "/abnormal-page/404",
             name: "404",
+          }
+        ]
+      },
+      {
+        path:"/module",
+        icon:'el-icon-receiving',
+        name: "module",
+        children: [
+          {
+            path: "/module/video",
+            name: "video",
+          },
+          {
+            path: "/module/upload",
+            name: "upload",
           }
         ]
       }
