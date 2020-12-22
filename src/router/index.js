@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-16 10:22:39
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-21 15:15:51
+ * @LastEditTime: 2020-12-21 17:46:33
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router';
@@ -244,6 +244,29 @@ export const authRoutes = [
             role:['user']
           },
           component: () => import( /* webpackChunkName: "Upload" */ '@views/module/upload/upload.vue')
+        }
+      ]
+    },
+    {
+      path:'/user-management',
+      name:'user_management',
+      redirect:{
+        name:'personal_center'
+      },
+      meta:{
+         title:'user_management',
+         role:['user']
+      },
+      component: () => import( /* webpackChunkName: "UserManagement" */ '@views/user-management/index.vue'),
+      children:[
+        {
+          path:'personal-center',
+          name:'personal_center',
+          meta: {
+            title: 'personal_center',
+            role:['user']
+          },
+          component: () => import( /* webpackChunkName: "PersonalCenter" */ '@views/user-management/personal-center/personal-center.vue')
         }
       ]
     },

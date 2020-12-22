@@ -10,7 +10,7 @@
           <!-- 更多下拉菜单 -->
           <el-dropdown trigger="click">
             <span class="el-dropdown-link">
-              <el-avatar class="header-avatar" shape="square" size="small" src="https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png"></el-avatar>
+              <el-avatar class="header-avatar" shape="square" size="small" :src="userAvatar"></el-avatar>
               {{userInfo.name}}<i class="el-icon-arrow-down el-icon--right"></i>
             </span>
             <el-dropdown-menu slot="dropdown">
@@ -44,7 +44,8 @@ export default {
       show: (state) => state.layoutModule.show,
       userInfo:(state)=>state.authModule.user,
       language:(state)=>state.layoutModule.language,
-      menuList:(state)=>state.authModule.menuList
+      menuList:(state)=>state.authModule.menuList,
+      userAvatar:(state)=>state.authModule.userAvatar
     }),
   },
  

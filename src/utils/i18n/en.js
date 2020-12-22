@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-17 17:22:14
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-21 15:17:19
+ * @LastEditTime: 2020-12-21 17:20:27
  */
 import enLocale from 'element-ui/lib/locale/lang/en';
 
@@ -56,7 +56,9 @@ let _en = Object.assign({
         '404':'404',
         'module':'Module',
         'video':'Video',
-        'upload':'Upload'
+        'upload':'Upload',
+        'personal_center':'Personal Center',
+        'user_management':'User Management'
     },
     status:{
         'no_time':'No Time',

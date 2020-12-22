@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-08 10:59:10
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-10 16:51:02
+ * @LastEditTime: 2020-12-21 17:55:40
  */
 import {
     getSession,
@@ -58,6 +58,7 @@ const formatList=(authRoutes,auths)=>{
 
 const authModule = {
     state: {
+        userAvatar:getSession('userAvatar') || require('@assets/image/1.jpg'),
         token: getSession('token'),
         user: JSON.parse(getSession('user')) || Object.create(null),
         roles:[],

@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-17 17:22:08
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-21 15:17:09
+ * @LastEditTime: 2020-12-21 17:20:03
  */
 import zhLocale from 'element-ui/lib/locale/lang/zh-CN'
 
@@ -56,7 +56,9 @@ let _zhCN = Object.assign({
         '404':'404',
         'module':'组件',
         'video':'视频播放器',
-        'upload':'上传'
+        'upload':'上传',
+        'personal_center':'个人中心',
+        'user_management':'用户管理'
     },
     status:{
         'no_time':'暂无',

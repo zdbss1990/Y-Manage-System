@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-09 16:02:38
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-21 15:16:47
+ * @LastEditTime: 2020-12-21 17:50:04
  */
 const menuList=[
     {
@@ -107,6 +107,17 @@ const menuList=[
           {
             path: "/module/upload",
             name: "upload",
+          }
+        ]
+      },
+      {
+        path:"/user-management",
+        icon:'el-icon-user',
+        name: "user_management",
+        children: [
+          {
+            path: "/user-management/personal-center",
+            name: "personal_center",
           }
         ]
       }
