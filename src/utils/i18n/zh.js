@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-17 17:22:08
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-21 17:20:03
+ * @LastEditTime: 2020-12-22 15:43:07
  */
 import zhLocale from 'element-ui/lib/locale/lang/zh-CN'
 
@@ -58,7 +58,8 @@ let _zhCN = Object.assign({
         'video':'视频播放器',
         'upload':'上传',
         'personal_center':'个人中心',
-        'user_management':'用户管理'
+        'user_management':'用户管理',
+        'personal_setting':'个人设置'
     },
     status:{
         'no_time':'暂无',

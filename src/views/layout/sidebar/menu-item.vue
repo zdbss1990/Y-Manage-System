@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-27 17:22:24
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-04 11:00:37
+ * @LastEditTime: 2020-12-22 17:15:13
 -->
 <template>
     <div>
@@ -30,7 +30,7 @@ export default {
     }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .el-menu--collapse>.custom-scrollbar > div > .el-submenu > .el-submenu__title span {
   height: 0;
   width: 0;

@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-07 14:19:11
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-21 16:02:10
+ * @LastEditTime: 2020-12-23 09:54:47
 -->
 <template>
   <div class="base-form border-box min-height-full bg-f p-10 radius-4">
@@ -151,7 +151,6 @@ export default {
   methods:{
      getImageUrl(event){
          let url='';
-         console.log(event.raw)
          if(window.createObjectURL!= undefined){
              url=window.createObjectURL(event.raw)
          }else if(window.URL!=undefined){

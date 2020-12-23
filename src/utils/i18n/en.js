@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-17 17:22:14
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-21 17:20:27
+ * @LastEditTime: 2020-12-22 15:43:36
  */
 import enLocale from 'element-ui/lib/locale/lang/en';
 
@@ -58,7 +58,8 @@ let _en = Object.assign({
         'video':'Video',
         'upload':'Upload',
         'personal_center':'Personal Center',
-        'user_management':'User Management'
+        'user_management':'User Management',
+        'personal_setting':'Personal Setting'
     },
     status:{
         'no_time':'No Time',

@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-03 10:38:37
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-10 10:40:51
+ * @LastEditTime: 2020-12-22 16:54:32
 -->
 <template>
   <div class="basic-tables-tpl border-box min-height-full bg-f p-10 radius-4">
@@ -11,7 +11,7 @@
             <div class="f-s-18 m-b-10">{{$t('route.basic_tables')}}</div>
             <p class="f-s-12 gray m-b-10">以表格的形式展现列表.</p>
       </el-col>
-      <el-col :span="10" :offset="14" style="text-align: end">
+      <el-col :span="24">
         <el-form ref="form" inline :model="form" size="small">
           <el-form-item class="w200" prop="search">
             <el-input

@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-04 17:25:15
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-21 11:49:58
+ * @LastEditTime: 2020-12-22 16:58:05
 -->
 <template>
     <div class="product-list-tpl border-box min-height-full bg-f p-10 radius-4">
@@ -11,7 +11,7 @@
                   <div class="f-s-18 m-b-10">{{$t('route.product_list')}}</div>
                   <p class="f-s-12 gray m-b-10">以卡片的形式展现列表.</p>
              </el-col>
-             <el-col :span="6" v-for="(item,index) in productList" :key="index">
+             <el-col :lg="6" :md="6" class="m-t-10" v-for="(item,index) in productList" :key="index">
                  <el-card shadow="hover" class="product-card">
                      <div class="text-center f-s-14" >
                        <el-tag type="danger" class="oos" v-if="item.num<=5">缺货</el-tag>

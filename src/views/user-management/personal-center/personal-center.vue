@@ -2,13 +2,13 @@
  * @Author: zhangyao
  * @Date: 2020-12-21 17:25:04
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-22 15:30:49
+ * @LastEditTime: 2020-12-22 16:52:02
 -->
 <template>
-  <div class="personal-center-tpl border-box min-height-full p-10 radius-4">
+  <div class="personal-center-tpl border-box min-height-full">
     <el-row :gutter="24">
-      <el-col class="bg-f" :span="6">
-        <div class="user-info">
+      <el-col class="m-t-10" :lg="6" :md="6" :span="24">
+        <div class="user-info bg-f">
           <div class="text-center">
             <img class="user-avator m-t-10" :src="userAvatar" />
             <p class="m-b-10 m-t-10 f-s-24 font-bold">{{ userInfo.name }}</p>
@@ -58,7 +58,8 @@
           </div>
         </div>
       </el-col>
-      <el-col class="bg-f m-l-20 p-20" :span="17">
+      <el-col class="m-t-10" :lg="18" :md="18" :span="24">
+        <div class="bg-f p-20">
         <el-tabs v-model="activeName">
           <el-tab-pane :label="`文章(${contentList.length})`" name="first">
             <ul>
@@ -106,6 +107,7 @@
               </el-row>
           </el-tab-pane>
         </el-tabs>
+        </div>
       </el-col>
     </el-row>
   </div>
@@ -256,10 +258,11 @@ export default {
   border-radius: 50%;
 }
 .user-info {
-  padding: 10px;
+  padding: 20px;
 }
 .personal-center-tpl {
   color: $color;
+  padding:  0 10px;
 }
 .user-app {
   width: 32px;

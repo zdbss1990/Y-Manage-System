@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-08 10:59:10
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-21 17:55:40
+ * @LastEditTime: 2020-12-23 11:36:54
  */
 import {
     getSession,
@@ -15,7 +15,6 @@ import i18n from '@utils/i18n/';
 import {authRoutes,constantRoutes} from '@/router/'
 import menuList from '@assets/data/sidebar.js';
 import _ from 'loadsh'
-
 //遍历菜单
 const getTreeList=(routes,menu)=>{
     return menu.filter(v=>{
@@ -86,7 +85,11 @@ const authModule = {
         SET_ROUTERS: (state, routes) => {
             state.addRoutes = routes
             state.routes = constantRoutes.concat(routes)
-         }
+        },
+        SET_USER_AVATAR:(state,avatar)=>{
+             state.userAvatar=avatar;
+            //  setSession('userAvatar',state.userAvatar)
+        }
     },
     actions: {
        login({ commit }, data) {
@@ -163,6 +166,10 @@ const authModule = {
                 commit('SET_USER_INFO', Object.create(null))
                 commit('SET_USER_TYPE','')
             })
+        },
+        //设置用户头像
+        setUserAvatar({commit},avatar){
+            commit('SET_USER_AVATAR',avatar)
         }
     }
 }

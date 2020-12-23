@@ -2,11 +2,11 @@
  * @Author: zhangyao
  * @Date: 2020-11-27 17:15:11
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-04 15:53:00
+ * @LastEditTime: 2020-12-22 16:56:57
 -->
 <template>
   <div class="ux-table-tpl">
-    <el-table 
+    <el-table
             ref="multipleTable"
            :data="tableData" 
            :columnData="columnData"

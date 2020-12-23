@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-16 10:22:39
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-21 17:46:33
+ * @LastEditTime: 2020-12-22 15:42:37
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router';
@@ -267,6 +267,15 @@ export const authRoutes = [
             role:['user']
           },
           component: () => import( /* webpackChunkName: "PersonalCenter" */ '@views/user-management/personal-center/personal-center.vue')
+        },
+        {
+          path:'personal-setting',
+          name:'personal_setting',
+          meta: {
+            title: 'personal_setting',
+            role:['user']
+          },
+          component: () => import( /* webpackChunkName: "PersonalSetting" */ '@views/user-management/personal-setting/personal-setting.vue')
         }
       ]
     },

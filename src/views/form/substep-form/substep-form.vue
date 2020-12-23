@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-07 17:44:41
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-10 16:48:59
+ * @LastEditTime: 2020-12-23 14:20:39
 -->
 <template>
     <div class="substep-form-tpl border-box min-height-full bg-f p-10 radius-4">
@@ -150,7 +150,7 @@ export default {
                email:[
                  { required: true, message: '请输入邮箱地址',  trigger: 'blur'  },
                  { type: 'email', message: '请输入正确的邮箱地址', trigger: ['blur', 'change'] }
-              ]
+               ]
             }
         }
     },

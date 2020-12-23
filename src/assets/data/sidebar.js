@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-09 16:02:38
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-21 17:50:04
+ * @LastEditTime: 2020-12-22 17:11:50
  */
 const menuList=[
     {
@@ -118,6 +118,10 @@ const menuList=[
           {
             path: "/user-management/personal-center",
             name: "personal_center",
+          },
+          {
+            path:'/user-management/personal-setting',
+            name:'personal_setting'
           }
         ]
       }

@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-27 17:15:11
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-04 16:26:36
+ * @LastEditTime: 2020-12-22 17:36:53
 -->
 <template>
   <div class="ux-dialog-tpl">
@@ -15,8 +15,8 @@
     >
       <div><slot></slot></div>
       <span slot="footer" class="dialog-footer">
-        <el-button @click="handleClose">{{$t('button.cancel')}}</el-button>
-        <el-button type="primary" @click="submit">{{$t('button.confirm')}}</el-button>
+          <el-button @click="handleClose">{{$t('button.cancel')}}</el-button>
+          <el-button type="primary" @click="submit">{{$t('button.confirm')}}</el-button>
       </span>
     </el-dialog>
   </div>
