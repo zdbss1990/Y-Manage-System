@@ -2,13 +2,14 @@
  * @Author: zhangyao
  * @Date: 2020-11-16 16:33:09
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-01 14:59:11
+ * @LastEditTime: 2020-12-24 14:50:00
 -->
 <template>
     <div class="uxcloud-home-tpl page-body-fixed">
          <ux-header></ux-header>
          <ux-side-bar></ux-side-bar>
          <ux-main></ux-main>
+         <ux-config></ux-config>
     </div>
 </template>
 <script>

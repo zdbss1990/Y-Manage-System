@@ -10,7 +10,7 @@
     <el-menu
       :default-active="$route.path"
       class="el-menu-vertical-demo sidebar-menu"
-      background-color="#2d353c"
+      :background-color="menuBg"
       text-color="rgba(255, 255, 255, 0.45)"
       active-text-color="#fff"
       :collapse="collapse"
@@ -24,7 +24,7 @@
         ></menu-item>
       </vue-custom-scrollbar>
       <!-- 展开关闭箭头 -->
-      <div class="arrow" @click="changeCollapseState">
+      <div class="arrow" v-if="fold" @click="changeCollapseState">
         <i
           :class="!collapse ? 'el-icon-arrow-left' : 'el-icon-arrow-right'"
         ></i>
@@ -45,7 +45,9 @@ export default {
   computed: mapState({
     collapse: (state) => state.layoutModule.isCollapse,
     show: (state) => state.layoutModule.show,
-    menuData:(state)=>state.authModule.menus
+    menuData:(state)=>state.authModule.menus,
+    menuBg:(state)=>state.layoutModule.menuBg,
+    fold:(state)=>state.layoutModule.fold
   }),
   methods: {
     ...mapActions(["changeMenuState", "changeCollapse"]),
@@ -105,7 +107,7 @@ export default {
   right: 2px;
   margin: 10px 0;
   padding: 5px 20px 5px 10px !important;
-  background: #242b30;
+  background: rgba($color: #000000, $alpha: 0.2);
   color: #ffffff;
   border-radius: 20px 0 0 20px;
 }

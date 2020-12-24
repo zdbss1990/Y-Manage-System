@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-08 10:59:10
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-24 10:29:21
+ * @LastEditTime: 2020-12-24 15:55:43
  */
 import {
     getSession,
@@ -171,7 +171,7 @@ const authModule = {
                 },1000)
                
             })
-        }
+        },
     }
 }
 

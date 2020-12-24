@@ -1,0 +1,25 @@
+.theme-menu{
+    display: inline-block;
+    width:12px;
+    height: 50px;
+    background: #2d353c;
+}
+.theme-content{
+    display: inline-block;
+    width:60px;
+    height: 50px;
+    background:#e4e7e8;
+}
+.theme-config-main{
+    justify-content: space-around;
+}
+.left-2{
+    background: #1e1d1d;
+}
+.active{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: $success;
+}

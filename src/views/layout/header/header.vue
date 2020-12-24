@@ -5,8 +5,11 @@
         <span class="navbar-logo"></span>
         <a class="font-weight"><b>Y Manage System</b></a>
         <!-- 面包屑 -->
-        <span class="header-crumbs el-icon-s-unfold" @click="changeMenu"></span>
-        <div class="navbar-nav navbar-right">
+        <div class="config-button" @click="openSetting">
+            <i class="el-icon-more"></i>
+        </div>
+         <span class="header-crumbs el-icon-s-unfold" @click="changeMenu"></span>
+         <div class="navbar-nav navbar-right">
           <!-- 更多下拉菜单 -->
           <el-dropdown trigger="click">
             <span class="el-dropdown-link">
@@ -36,7 +39,7 @@ export default {
   name: "ux-header",
   data() {
     return {
-     
+      
     };
   },
   computed: {
@@ -45,7 +48,8 @@ export default {
       userInfo:(state)=>state.authModule.user,
       language:(state)=>state.layoutModule.language,
       menuList:(state)=>state.authModule.menuList,
-      userAvatar:(state)=>state.authModule.userAvatar
+      userAvatar:(state)=>state.authModule.userAvatar,
+      drawer:(state)=>state.layoutModule.drawer
     }),
   },
  
@@ -53,7 +57,8 @@ export default {
     ...mapActions([
        'changeMenuState',
        'setLanguage',
-       'loginOut'
+       'loginOut',
+       'openSettings'
     ]),
     changeMenu(){
        //点开导航
@@ -78,6 +83,11 @@ export default {
             path:'/login'
           })
        })
+    },
+    //打开设置
+    openSetting(){
+       let flag=this.drawer;
+       this.openSettings(!flag)
     }
   }
 };
@@ -95,6 +105,14 @@ export default {
     background: $fff;
   }
 }
+.config-button{
+   position: absolute;
+   right: 10px;
+   width: 32px;
+   height: 32px;
+   line-height: 30px;
+   text-align: center;
+}
 .header-crumbs{
   font-size: 20px;
   &:hover{
@@ -108,7 +126,7 @@ export default {
   .navbar-right{
     position: absolute;
     display: block;
-    right: 20px;
+    right: 45px;
   }
   .header-crumbs {
     display: none;
@@ -117,7 +135,7 @@ export default {
 @media (max-width: 767px) {
   .header-crumbs {
      position: absolute;
-     right: 20px;
+     right: 40px;
      display: block;
   }
    .navbar-right{
