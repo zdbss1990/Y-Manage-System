@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-21 13:58:02
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-21 14:51:30
+ * @LastEditTime: 2020-12-24 14:07:50
 -->
 <template>
   <div class="video-tpl border-box min-height-full bg-f p-10 radius-4">
@@ -49,15 +49,9 @@ export default {
             src: "http://vjs.zencdn.net/v/oceans.mp4",
             // webm
             // src: "https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm"
-          }],
-          poster: "https://surmon-china.github.io/vue-quill-editor/static/images/surmon-1.jpg",
+          }]
       },
     };
-  },
-  computed:{
-      player() {
-        return this.$refs.videoPlayer.player
-      }
   },
    methods: {
       // listen event
@@ -101,10 +95,6 @@ export default {
       }
     },
     mounted(){
-        setTimeout(()=>{
-            console.log('dynamic change options', this.player);
-            this.player.muted(false)
-        },10000)
     }
 };
 </script>

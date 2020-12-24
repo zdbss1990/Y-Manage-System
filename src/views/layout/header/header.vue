@@ -3,7 +3,7 @@
     <div class="header-default">
       <div class="navbar-header">
         <span class="navbar-logo"></span>
-        <a class="font-weight"><b>UXCLOUD</b></a>
+        <a class="font-weight"><b>Y Manage System</b></a>
         <!-- 面包屑 -->
         <span class="header-crumbs el-icon-s-unfold" @click="changeMenu"></span>
         <div class="navbar-nav navbar-right">

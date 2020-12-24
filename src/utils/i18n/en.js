@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-17 17:22:14
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-24 09:33:19
+ * @LastEditTime: 2020-12-24 14:03:26
  */
 import enLocale from 'element-ui/lib/locale/lang/en';
 
@@ -32,7 +32,6 @@ let _en = Object.assign({
     route:{
         'home':'Home',
         'dashboard':'Dashboard',
-        'uxsino':'Uxsino',
         'charts':'Charts',
         'form':'Form',
         'monitoring':'Monitor',

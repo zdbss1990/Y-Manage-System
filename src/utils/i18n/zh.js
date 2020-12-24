@@ -32,7 +32,6 @@ let _zhCN = Object.assign({
     route:{
         'home':'主页',
         'dashboard':'总览',
-        'uxsino':'优炫',
         'charts':'图表',
         'form':'表单',
         'monitoring':'监控',

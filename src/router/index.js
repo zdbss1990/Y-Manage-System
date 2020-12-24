@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-16 10:22:39
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-24 09:38:03
+ * @LastEditTime: 2020-12-24 14:09:30
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router';
@@ -331,11 +331,9 @@ router.beforeEach(async (to, from, next) => {
   let token=getSession('token');
   let paths = ['/login', '/register'];
   if(token){
-     console.log(1111111)
      NProgress.start()
     //判断用户信息是否读取成功 删选路由访问菜单
       if (to.path === '/login') {
-        console.log(2222222)
         next({ path: '/' });
         NProgress.done()
       }else{
@@ -357,19 +355,16 @@ router.beforeEach(async (to, from, next) => {
               next({...to,replace:true});
             });
            }).catch(async err=>{
-             console.log(44444444)
              //获取失败后退出登录 清除登录token
              await store.dispatch('resetUser')
              next('/login')
              NProgress.done()
          })
         }else{
-          console.log(555555)
           return next()
         }
       }
   }else{
-      console.log(to.path)
       paths.includes(to.path) ? next():next('/login')
       NProgress.done()
   }
