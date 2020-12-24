@@ -11,14 +11,14 @@
           <el-dropdown trigger="click">
             <span class="el-dropdown-link">
               <el-avatar class="header-avatar" shape="square" size="small" :src="userAvatar"></el-avatar>
-              {{userInfo.name}}<i class="el-icon-arrow-down el-icon--right"></i>
+              {{userInfo.true_name}}<i class="el-icon-arrow-down el-icon--right"></i>
             </span>
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item>
-                <div @click="logout">login out</div>
+                <div @click="logout">退出登录</div>
               </el-dropdown-item>
                <el-dropdown-item>
-                <div>Setting</div>
+                <div>个人设置</div>
               </el-dropdown-item>
               <el-dropdown-item>
                 <div @click="setLang">{{language==='zh_CN' ? 'En' :'中文'}}</div>

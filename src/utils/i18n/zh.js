@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-17 17:22:08
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-22 15:43:07
+ * @LastEditTime: 2020-12-24 09:32:38
  */
 import zhLocale from 'element-ui/lib/locale/lang/zh-CN'
 
@@ -59,7 +59,8 @@ let _zhCN = Object.assign({
         'upload':'上传',
         'personal_center':'个人中心',
         'user_management':'用户管理',
-        'personal_setting':'个人设置'
+        'personal_setting':'个人设置',
+        'not_found':'未找到'
     },
     status:{
         'no_time':'暂无',

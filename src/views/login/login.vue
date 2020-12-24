@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-08 10:14:41
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-09 09:57:56
+ * @LastEditTime: 2020-12-23 17:14:52
 -->
 <template>
   <div class="login-tpl height-full">
@@ -116,12 +116,12 @@ export default {
     singin(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.login(this.ruleForm).then((res) => {
+           this.login(this.ruleForm).then((res) => {
+                console.log(res)
                 this.$router.push({
                   path: "/home",
                 });
-            })
-            .catch((err) => {
+            }).catch((err) => {
               console.log(err);
             });
         } else {

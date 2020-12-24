@@ -2,13 +2,12 @@
  * @Author: zhangyao
  * @Date: 2020-12-08 10:59:10
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-23 11:36:54
+ * @LastEditTime: 2020-12-24 10:29:21
  */
 import {
     getSession,
     setSession
 } from '@utils/auth/session.js';
-import Service from '@/api/';
 import notify from '@utils/notify/notify.js';
 import i18n from '@utils/i18n/';
 //引入路由
@@ -63,7 +62,7 @@ const authModule = {
         roles:[],
         routes:[],
         addRoutes:[],
-        menus:_.cloneDeep(menuList),
+        menus:[],
         routeArr:[]
     },
     mutations: {
@@ -79,80 +78,67 @@ const authModule = {
             state.menus=menu
         },
         SET_USER_TYPE(state,type){
-             state.roles=type
+            state.roles=type;
             // state.role=type === 1 ? 'admin':'user';
         },
         SET_ROUTERS: (state, routes) => {
-            state.addRoutes = routes
-            state.routes = constantRoutes.concat(routes)
+            state.addRoutes =routes
+            state.routes = constantRoutes.concat(routes);
         },
         SET_USER_AVATAR:(state,avatar)=>{
              state.userAvatar=avatar;
-            //  setSession('userAvatar',state.userAvatar)
+        },
+        SET_USER_MSG:(state,user)=>{
+            state.user.type=Array.of(user.power)
+            state.user=Object.assign(state.user,user);
+            setSession('user',JSON.stringify(state.user))
         }
     },
     actions: {
-       login({ commit }, data) {
+       login({ commit,state }, data) {
            return new Promise((resolve,reject)=>{
-            Service.userService.login({
-                type: 'post',
-                data: {
-                    ...data
-                },
-                success: (res) => {
-                    if (res.success) {
-                        let token = res.token.access_token;
-                        let user_info = res.user
-                        commit('SET_TOKEN', token)
-                        commit('SET_USER_INFO', user_info)
-                        notify({
-                            title: i18n.t('msg.tips'),
-                            type: 'success',
-                            message: i18n.t('msg.login_success')
-                        })
-                        resolve()
-                    } else {
-                        notify({
-                            title: i18n.t('msg.tips'),
-                            type: 'error',
-                            message: i18n.t('msg.login_fail')
-                        })
-                        reject()
-                    }
-                }
-              })
+               if(data.username==='admin' && data.password==='123456'){
+                    let token='xsscqaasWQS1SSS12';
+                    let user_info = {name:'admin',true_name:'张嘚吧',type:state.roles.length ?state.roles:['admin'],email:'www.zdb1990@163.com',introduction:'开开心心又一天~'};
+                    commit('SET_TOKEN', token)
+                    commit('SET_USER_INFO', user_info)
+                    notify({
+                        title: i18n.t('msg.tips'),
+                        type: 'success',
+                        message: i18n.t('msg.login_success')
+                    })
+                    resolve()
+               }else{
+                    notify({
+                        title: i18n.t('msg.tips'),
+                        type: 'error',
+                        message: i18n.t('msg.login_fail')
+                    })
+                    reject()
+               }
            })
         },
         //退出登录
-        loginOut({commit,dispatch}){
+        loginOut({commit}){
             return new Promise((resolve,reject)=>{
-                Service.userService.loginOut({
-                    type:'post',
-                    success:(res)=>{
-                       if(res){
-                        notify({
-                            title: i18n.t('msg.tips'),
-                            type: 'success',
-                            message: i18n.t('msg.exit_success')
-                        })
-                         sessionStorage.clear()
-                         resolve()
-                       }
-                    }
+                notify({
+                    title: i18n.t('msg.tips'),
+                    type: 'success',
+                    message: i18n.t('msg.exit_success')
                 })
+                sessionStorage.clear();
+                resolve()
             })
         },
         //其获取用户信息
         getUserInfo({commit,state}){
-            //   commit('SET_USER_TYPE',state.user.type)
-              commit('SET_USER_TYPE',['user','admin'])
-              return ['user','admin']
-            //   return state.user.type
+              commit('SET_USER_TYPE',state.user.type)
+              return state.user.type
         },
         async getNewRoute({commit,state},auths){
-              let needRoutes=formatList(authRoutes,auths) || [];
+              let needRoutes=formatList(_.cloneDeep(authRoutes),auths) || [];
               handelRoute(needRoutes[0].children,state.routeArr);
-              let menu=getTreeList(state.routeArr,state.menus);
+              let menu=getTreeList(state.routeArr,_.cloneDeep(menuList));
               //设置菜单
               commit('SET_MENULIST',menu)
               //设置路由
@@ -164,12 +150,27 @@ const authModule = {
             return new Promise((resolve)=>{
                 commit('SET_TOKEN', '')
                 commit('SET_USER_INFO', Object.create(null))
-                commit('SET_USER_TYPE','')
+                commit('SET_USER_TYPE',[])
             })
         },
         //设置用户头像
         setUserAvatar({commit},avatar){
             commit('SET_USER_AVATAR',avatar)
+        },
+        //更新用户基本信息
+        setUserMsg({commit,dispatch,state},user){
+            return new Promise((resolve,reject)=>{
+                notify({
+                    title: i18n.t('msg.tips'),
+                    type: 'info',
+                    message: '更新中'
+                })
+                setTimeout(()=>{
+                    commit('SET_USER_MSG',user)
+                    resolve()
+                },1000)
+               
+            })
         }
     }
 }

@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-22 15:40:15
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-23 14:22:53
+ * @LastEditTime: 2020-12-24 10:54:35
 -->
 <template>
   <div class="personal-setting-tpl border-box min-height-full">
@@ -47,13 +47,13 @@
                   label-position="top"
                   :model="baseForm"
                   :rules="baseRules"
-                  ref="form"
+                  ref="baseForm"
                   class="demo-ruleForm"
                   label-width="100px"
                 >
-                  <el-form-item label="昵称" prop="name">
+                  <el-form-item label="昵称" prop="true_name">
                     <el-input
-                      v-model="baseForm.name"
+                      v-model="baseForm.true_name"
                       autocomplete="off"
                     ></el-input>
                   </el-form-item>
@@ -65,6 +65,7 @@
                       <el-option label="管理员" value="admin"></el-option>
                       <el-option label="用户" value="user"></el-option>
                     </el-select>
+                    <span class="f-s-12 m-l-10">根据不同用户权限，页面会动态显示可访问的菜单、页面.</span>
                   </el-form-item>
                   <el-form-item label="个人介绍" prop="introduction">
                     <el-input
@@ -73,11 +74,41 @@
                     ></el-input>
                   </el-form-item>
                   <el-form-item>
-                      <el-button type="primary">更新基本信息</el-button>
+                      <el-button type="primary" @click="updateBaseInfo('baseForm')">更新基本信息</el-button>
                   </el-form-item>
                 </el-form>
               </el-col>
             </el-row>
+          </div>
+          <div v-else-if="activeIndex===1">
+            <h4 class="f-s-18 font-bold">安全设置</h4>
+             <ul class="m-t-20 p-20">
+               <template v-for="(item,index) in configList">
+                    <li class="display-flex config-list" :key="index">
+                      <div class="f-s-14">
+                          <span class="config-list-title font-bold">{{item.title}}</span>
+                          <p class="m-t-10">{{item.des}}</p>
+                      </div>
+                      <el-button type="text">{{item.btn}}</el-button>
+                    </li>
+                    <el-divider v-if="index!==configList.length-1" :key="index+1"></el-divider>
+                </template>
+             </ul>
+          </div>
+          <div v-else>
+            <h4 class="f-s-18 font-bold">新消息通知</h4>
+             <ul class="m-t-20 p-20">
+               <template v-for="(item,index) in messageList">
+                    <li class="display-flex message-list" :key="index">
+                      <div class="f-s-14">
+                          <span class="message-list-title font-bold">{{item.title}}</span>
+                          <p class="m-t-10">{{item.des}}</p>
+                      </div>
+                     <el-switch v-model="item.switch"></el-switch>
+                    </li>
+                    <el-divider v-if="index!==messageList.length-1" :key="index+1"></el-divider>
+                </template>
+             </ul>
           </div>
         </div>
       </el-col>
@@ -115,41 +146,17 @@
         </div>
       </div>
       <div class="m-t-20 display-flex">
-        <el-upload
-          class="avatar-uploader m-r-10"
-          action="#"
-          :limit="1"
-          :show-file-list="false"
-          :on-change="getImageUrl"
-        >
+        <el-upload class="avatar-uploader m-r-10" action="#" :limit="1" :show-file-list="false" :on-change="getImageUrl">
           <el-button>更换图片</el-button>
         </el-upload>
-        <el-button
-          icon="el-icon-zoom-in"
-          circle
-          @click="changeScale(1)"
-        ></el-button>
-        <el-button
-          icon="el-icon-zoom-out"
-          circle
-          @click="changeScale(-1)"
-        ></el-button>
-        <el-button
-          icon="el-icon-refresh-right"
-          circle
-          @click="rotateRight"
-        ></el-button>
-        <el-button
-          icon="el-icon-refresh-left"
-          circle
-          @click="rotateLeft"
-        ></el-button>
+        <el-button icon="el-icon-zoom-in" circle @click="changeScale(1)"></el-button>
+        <el-button icon="el-icon-zoom-out" circle @click="changeScale(-1)"></el-button>
+        <el-button icon="el-icon-refresh-right" circle @click="rotateRight"></el-button>
+        <el-button icon="el-icon-refresh-left" circle @click="rotateLeft"></el-button>
       </div>
       <span slot="footer" class="dialog-footer">
         <el-button @click="handleClose">取 消</el-button>
-        <el-button type="primary" @click="changeUserAvatar('blob')"
-          >确 定</el-button
-        >
+        <el-button type="primary" @click="changeUserAvatar('blob')">确 定</el-button>
       </span>
     </el-dialog>
   </div>
@@ -170,22 +177,18 @@ export default {
           des: "密码、邮箱等设置",
         },
         {
-          title: "账号绑定",
-          des: "绑定第三方社交账户",
-        },
-        {
           title: "新消息通知",
           des: "各种通知的设置",
         },
       ],
       baseForm: {
-        name: this.$store.state.authModule.user["true_name"],
+        true_name: this.$store.state.authModule.user["true_name"],
         email: this.$store.state.authModule.user["email"],
-        power: "",
-        introduction: "",
+        power: this.$store.state.authModule.user["type"][0],
+        introduction: this.$store.state.authModule.user["introduction"],
       },
       baseRules: {
-        name: [
+        true_name: [
           {
             required: true,
             message: "请输入昵称",
@@ -222,6 +225,50 @@ export default {
         img: "",
         div: "",
       },
+      configList:[
+        {
+          title:'账户密码',
+          des:'绑定手机和邮箱，并设置密码，帐号更安全',
+          btn:'修改'
+        },
+        {
+          title:'绑定手机',
+          des:'已绑定手机号：+86131****8183',
+          btn:'修改'
+        },
+        {
+          title:'密保问题',
+          des:'未设置密保问题，密保问题可有效保护账户安全',
+          btn:'设置'
+        },
+        {
+          title:'个性域名',
+          des:'已绑定域名：manage.template',
+          btn:'修改'
+        }
+      ],
+       messageList:[
+        {
+          title:'陌生人私信',
+          des:'未关注的人向您发私信时的通知',
+          switch:true
+        },
+        {
+          title:'邀请/评论消息',
+          des:'有人对我发出邀请时，我会收到消息通知',
+          switch:false
+        },
+        {
+          title:'赞同/赞赏消息设置',
+          des:'有人对我赞同或赞赏时，我会收到消息通知',
+          switch:true
+        },
+        {
+          title:'邮件设置',
+          des:'重要事件发生时，我将会收到邮件提醒',
+          switch:true
+        },
+       ]
     };
   },
   computed: {
@@ -237,7 +284,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions(["setUserAvatar"]),
+    ...mapActions(["setUserAvatar","setUserMsg"]),
     getUrl(event) {
       let url = "";
       if (window.createObjectURL != undefined) {
@@ -291,6 +338,18 @@ export default {
         this.dialog_visible = false;
       });
     },
+    //更新基本信息
+    updateBaseInfo(formName){
+        this.$refs[formName].validate((valid) => {
+          if (valid) {
+             this.setUserMsg(this.baseForm).then(res=>{
+                location.reload();
+             })
+          } else {
+            return false;
+          }
+        });
+    }
   },
 };
 </script>
@@ -327,5 +386,11 @@ export default {
     background: #cccccc;
     // margin-left: 40px;
   }
+}
+.config-list,.message-list{
+  justify-content: space-between;
+}
+.config-list-title,.message-list-title{
+  color: $black-dark;
 }
 </style>

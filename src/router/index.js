@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-16 10:22:39
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-22 15:42:37
+ * @LastEditTime: 2020-12-24 09:38:03
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router';
@@ -87,7 +87,7 @@ export const authRoutes = [
       },
       meta: {
         title: 'form',
-        role:['user']
+        role:['admin']
       },
       component: () => import( /* webpackChunkName: "Form" */ '@views/form/index.vue'),
       children: [{
@@ -95,7 +95,7 @@ export const authRoutes = [
           name: 'base_form',
           meta: {
             title: 'base_form',
-            role:['user']
+            role:['admin']
           },
           component: () => import( /* webpackChunkName: "BaseForm" */ '@views/form/base-form/base-form.vue'),
         },
@@ -104,7 +104,7 @@ export const authRoutes = [
           name: 'substep_form',
           meta: {
             title: 'substep_form',
-            role:['user']
+            role:['admin']
           },
           component: () => import( /* webpackChunkName: "SubstepForm" */ '@views/form/substep-form/substep-form.vue'),
         }
@@ -118,7 +118,7 @@ export const authRoutes = [
       },
       meta: {
          title: 'charts',
-         role:['user']
+         role:['admin']
        },
       component: () => import( /* webpackChunkName: "Charts" */ '@views/charts/index.vue'),
       children:[
@@ -127,7 +127,7 @@ export const authRoutes = [
           name: 'v_charts',
           meta: {
             title: 'v_charts',
-            role:['user']
+            role:['admin']
           },
           component: () => import( /* webpackChunkName: "VCharts" */ '@views/charts/v-charts/v-charts.vue'),
         },
@@ -136,7 +136,7 @@ export const authRoutes = [
           name: 'apex_charts',
           meta: {
             title:'apex_charts',
-            role:['user']
+            role:['admin']
           },
           component: () => import( /* webpackChunkName: "ApexCharts" */ '@views/charts/apex-charts/apex-charts.vue'),
         },
@@ -145,7 +145,7 @@ export const authRoutes = [
            name:'fusion_chart_map',
            meta: {
             title:'fusion_chart_map',
-            role:['user']
+            role:['admin']
           },
           component: () => import( /* webpackChunkName: "FusionChartMap" */ '@views/charts/fusion-chart-map/fusion-chart-map.vue'),
         },
@@ -154,7 +154,7 @@ export const authRoutes = [
           name:'baidu_maps',
           meta: {
            title:'baidu_maps',
-           role:['user']
+           role:['admin']
          },
          component: () => import( /* webpackChunkName: "BaiduMaps" */ '@views/charts/baidu-maps/baidu-maps.vue'),
        }
@@ -168,7 +168,7 @@ export const authRoutes = [
       },
       meta: {
          title: 'editor',
-         role:['user']
+         role:['admin']
        },
       component: () => import( /* webpackChunkName: "Editor" */ '@views/editor/index.vue'),
       children:[
@@ -177,7 +177,7 @@ export const authRoutes = [
             name: 'quill_editor',
             meta: {
               title: 'quill_editor',
-              role:['user']
+              role:['admin']
             },
             component: () => import( /* webpackChunkName: "QuillEditor" */ '@views/editor/quill-editor/quill-editor.vue'),
           },
@@ -186,7 +186,7 @@ export const authRoutes = [
             name: 'markdown',
             meta: {
               title: 'markdown',
-              role:['user']
+              role:['admin']
             },
             component: () => import( /* webpackChunkName: "Markdown" */ '@views/editor/markdown/markdown.vue'),
           },
@@ -200,7 +200,7 @@ export const authRoutes = [
       },
       meta: {
          title: 'abnormal_page',
-         role:['user']
+         role:['admin']
       },
       component: () => import( /* webpackChunkName: "AbnormalPage" */ '@views/abnormal-page/index.vue'),
       children:[
@@ -209,7 +209,7 @@ export const authRoutes = [
             name: '404',
             meta: {
               title: '404',
-              role:['user']
+              role:['admin']
             },
             component: () => import( /* webpackChunkName: "404" */ '@views/abnormal-page/not-found/not-found.vue')
          }
@@ -223,7 +223,7 @@ export const authRoutes = [
       },
       meta:{
          title:'module',
-         role:['user']
+         role:['admin']
       },
       component: () => import( /* webpackChunkName: "Module" */ '@views/module/index.vue'),
       children:[
@@ -232,7 +232,7 @@ export const authRoutes = [
           name: 'video',
           meta: {
             title: 'video',
-            role:['user']
+            role:['admin']
           },
           component: () => import( /* webpackChunkName: "Video" */ '@views/module/video/video.vue')
         },
@@ -241,7 +241,7 @@ export const authRoutes = [
           name: 'upload',
           meta: {
             title: 'upload',
-            role:['user']
+            role:['admin']
           },
           component: () => import( /* webpackChunkName: "Upload" */ '@views/module/upload/upload.vue')
         }
@@ -255,7 +255,7 @@ export const authRoutes = [
       },
       meta:{
          title:'user_management',
-         role:['user']
+         role:['admin','user']
       },
       component: () => import( /* webpackChunkName: "UserManagement" */ '@views/user-management/index.vue'),
       children:[
@@ -264,7 +264,7 @@ export const authRoutes = [
           name:'personal_center',
           meta: {
             title: 'personal_center',
-            role:['user']
+            role:['admin','user']
           },
           component: () => import( /* webpackChunkName: "PersonalCenter" */ '@views/user-management/personal-center/personal-center.vue')
         },
@@ -273,7 +273,7 @@ export const authRoutes = [
           name:'personal_setting',
           meta: {
             title: 'personal_setting',
-            role:['user']
+            role:['admin','user']
           },
           component: () => import( /* webpackChunkName: "PersonalSetting" */ '@views/user-management/personal-setting/personal-setting.vue')
         }
@@ -287,7 +287,7 @@ export const authRoutes = [
       },
       component: NotFound
     },
-    { path: '*', name:'404', redirect: '/404' }
+    { path: '*', name:'404', redirect: '/404'}
    ],
   },
 ]
@@ -323,6 +323,7 @@ const router = new VueRouter({
   }
 })
 
+
 //路由守卫
 router.beforeEach(async (to, from, next) => {
   NProgress.start();
@@ -330,9 +331,11 @@ router.beforeEach(async (to, from, next) => {
   let token=getSession('token');
   let paths = ['/login', '/register'];
   if(token){
+     console.log(1111111)
      NProgress.start()
     //判断用户信息是否读取成功 删选路由访问菜单
       if (to.path === '/login') {
+        console.log(2222222)
         next({ path: '/' });
         NProgress.done()
       }else{
@@ -342,26 +345,33 @@ router.beforeEach(async (to, from, next) => {
             let role=res;
             store.dispatch('getNewRoute',role).then(res=>{
               //通过权限添加路由
+              router.matcher = new VueRouter({
+                base: '',
+                mode: 'history',
+                scrollBehavior: () => ({
+                  y: 0,
+                }),
+                routes: constantRoutes,
+              }).matcher
               router.addRoutes(res);
               next({...to,replace:true});
             });
            }).catch(async err=>{
+             console.log(44444444)
              //获取失败后退出登录 清除登录token
              await store.dispatch('resetUser')
              next('/login')
              NProgress.done()
          })
         }else{
+          console.log(555555)
           return next()
         }
       }
   }else{
-    if(paths.includes(to.path)){
-      next()
-    }else{
-      next('/login')
+      console.log(to.path)
+      paths.includes(to.path) ? next():next('/login')
       NProgress.done()
-    }
   }
 })
 router.afterEach((to, from) => {

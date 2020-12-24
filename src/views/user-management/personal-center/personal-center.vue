@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-21 17:25:04
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-22 16:52:02
+ * @LastEditTime: 2020-12-23 15:03:44
 -->
 <template>
   <div class="personal-center-tpl border-box min-height-full">
@@ -11,11 +11,14 @@
         <div class="user-info bg-f">
           <div class="text-center">
             <img class="user-avator m-t-10" :src="userAvatar" />
-            <p class="m-b-10 m-t-10 f-s-24 font-bold">{{ userInfo.name }}</p>
+            <p class="m-b-10 m-t-10 f-s-24 font-bold">{{ userInfo.true_name }}</p>
             <span>要得到，先成为。</span>
           </div>
           <p class="m-t-20 f-s-14">
             <i class="el-icon-s-cooperation"></i> 前端工程师
+          </p>
+           <p class="m-t-10 f-s-14">
+            <i class="el-icon-eleme"></i> {{userInfo.email}}
           </p>
           <p class="m-t-10 f-s-14"><i class="el-icon-location"></i> 北京市</p>
           <ul class="m-t-20 display-flex app-content">
