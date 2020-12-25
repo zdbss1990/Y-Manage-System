@@ -2,14 +2,14 @@
  * @Author: zhangyao
  * @Date: 2020-12-03 10:38:37
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-22 16:54:32
+ * @LastEditTime: 2020-12-25 15:39:24
 -->
 <template>
   <div class="basic-tables-tpl border-box min-height-full bg-f p-10 radius-4">
     <el-row :gutter="24">
-       <el-col :span="24">
-            <div class="f-s-18 m-b-10">{{$t('route.basic_tables')}}</div>
-            <p class="f-s-12 gray m-b-10">以表格的形式展现列表.</p>
+      <el-col :span="24">
+        <div class="f-s-18 m-b-10">{{ $t("route.basic_tables") }}</div>
+        <p class="f-s-12 gray m-b-10">以表格的形式展现列表.</p>
       </el-col>
       <el-col :span="24">
         <el-form ref="form" inline :model="form" size="small">
@@ -31,7 +31,7 @@
               icon="el-icon-plus"
               @click="addUser"
               v-has="'admin'"
-              >{{ $t("button.add")}}
+              >{{ $t("button.add") }}
             </el-button>
             <el-dropdown v-if="select_data.length" trigger="click">
               <el-button size="small">
@@ -65,66 +65,66 @@
         </ux-table>
       </el-col>
     </el-row>
-    <ux-dialog
-      :dialog_title="type==='add' ? $t('basicTables.add_option'):$t('basicTables.edit_option')"
-      :dialog_visible="dialog_visible"
-      @handleClose="handleClose"
-      @submit="submit"
-    >
-      <el-form
-        :model="optForm"
-        :rules="rules"
-        ref="opt"
-        class="demo-ruleForm"
-        label-position="left"
-        label-width="80px"
-      >
-        <el-form-item :label="$t('form.name')" prop="name">
-          <el-input
-            clearable
-            v-model.trim="optForm.name"
-            :placeholder="$t('errMsg.please_enter_the_name')"
-          ></el-input>
-        </el-form-item>
-        <el-form-item :label="$t('form.sex')" prop="sex">
-          <el-radio v-model="optForm.sex" label="man">{{
-            $t("form.man")
-          }}</el-radio>
-          <el-radio v-model="optForm.sex" label="woman">{{
-            $t("form.woman")
-          }}</el-radio>
-        </el-form-item>
-        <el-form-item :label="$t('form.status')" prop="status">
-          <el-radio v-model="optForm.status" label="online">{{
-            $t("form.online")
-          }}</el-radio>
-          <el-radio v-model="optForm.status" label="off_line">{{
-            $t("form.off_line")
-          }}</el-radio>
-        </el-form-item>
-        <el-form-item :label="$t('form.create_time')" prop="create_time">
-          <el-date-picker
-            v-model="optForm.create_time"
-            :picker-options="pickerOptions"
-            type="datetime"
-            :placeholder="$t('errMsg.please_select_time')"
+      <ux-dialog
+          :dialog_title=" type === 'add' ? $t('basicTables.add_option'): $t('basicTables.edit_option')"
+          :dialog_visible="dialog_visible"
+          @handleClose="handleClose"
+          @submit="submit"
+        >
+          <el-form
+            :model="optForm"
+            :rules="rules"
+            ref="opt"
+            class="demo-ruleForm"
+            label-position="left"
+            label-width="80px"
           >
-          </el-date-picker>
-        </el-form-item>
-        <el-form-item :label="$t('form.address')" prop="address">
-          <el-input
-            clearable
-            v-model.trim="optForm.address"
-            :placeholder="$t('errMsg.please_enter_the_address')"
-          ></el-input>
-        </el-form-item>
-      </el-form>
-    </ux-dialog>
+            <el-form-item :label="$t('form.name')" prop="name">
+              <el-input
+                clearable
+                v-model.trim="optForm.name"
+                :placeholder="$t('errMsg.please_enter_the_name')"
+              ></el-input>
+            </el-form-item>
+            <el-form-item :label="$t('form.sex')" prop="sex">
+              <el-radio v-model="optForm.sex" label="man">{{
+                $t("form.man")
+              }}</el-radio>
+              <el-radio v-model="optForm.sex" label="woman">{{
+                $t("form.woman")
+              }}</el-radio>
+            </el-form-item>
+            <el-form-item :label="$t('form.status')" prop="status">
+              <el-radio v-model="optForm.status" label="online">{{
+                $t("form.online")
+              }}</el-radio>
+              <el-radio v-model="optForm.status" label="off_line">{{
+                $t("form.off_line")
+              }}</el-radio>
+            </el-form-item>
+            <el-form-item :label="$t('form.create_time')" prop="create_time">
+              <el-date-picker
+                v-model="optForm.create_time"
+                :picker-options="pickerOptions"
+                type="datetime"
+                :placeholder="$t('errMsg.please_select_time')"
+              >
+              </el-date-picker>
+            </el-form-item>
+            <el-form-item :label="$t('form.address')" prop="address">
+              <el-input
+                clearable
+                v-model.trim="optForm.address"
+                :placeholder="$t('errMsg.please_enter_the_address')"
+              ></el-input>
+            </el-form-item>
+          </el-form>
+        </ux-dialog>
   </div>
 </template>
 <script>
 import { v4 as uuidv4 } from "uuid";
-import { mapState } from 'vuex';
+import { mapState } from "vuex";
 export default {
   data() {
     return {
@@ -138,10 +138,10 @@ export default {
       form: {
         search: "",
       },
-      type:'add',
+      type: "add",
       select_all: true,
       select_data: [],
-      index:0,
+      index: 0,
       // dialog_title: ,
       dialog_visible: false,
       optForm: {
@@ -187,7 +187,7 @@ export default {
           status: "online",
           sex: "man",
           address: "上海市普陀区金沙江路 1518 号",
-          info:30,
+          info: 30,
           id: uuidv4(),
         },
         {
@@ -197,7 +197,7 @@ export default {
           status: "online",
           sex: "woman",
           address: "上海市普陀区金沙江路 1517 号",
-          info:10,
+          info: 10,
           id: uuidv4(),
         },
         {
@@ -207,7 +207,7 @@ export default {
           status: "off_line",
           sex: "man",
           address: "上海市普陀区金沙江路 1516 号",
-          info:100,
+          info: 100,
           id: uuidv4(),
         },
         {
@@ -217,7 +217,7 @@ export default {
           status: "online",
           sex: "woman",
           address: "上海市普陀区金沙江路 1515 号",
-          info:70,
+          info: 70,
           id: uuidv4(),
         },
         {
@@ -227,7 +227,7 @@ export default {
           status: "off_line",
           sex: "man",
           address: "上海市普陀区金沙江路 1515 号",
-          info:30,
+          info: 30,
           id: uuidv4(),
         },
         {
@@ -237,7 +237,7 @@ export default {
           status: "online",
           sex: "man",
           address: "上海市普陀区金沙江路 1518 号",
-          info:30,
+          info: 30,
           id: uuidv4(),
         },
         {
@@ -247,7 +247,7 @@ export default {
           status: "online",
           sex: "woman",
           address: "上海市普陀区金沙江路 1517 号",
-          info:30,
+          info: 30,
           id: uuidv4(),
         },
         {
@@ -257,7 +257,7 @@ export default {
           status: "off_line",
           sex: "man",
           address: "上海市普陀区金沙江路 1516 号",
-          info:30,
+          info: 30,
           id: uuidv4(),
         },
         {
@@ -267,7 +267,7 @@ export default {
           status: "online",
           sex: "woman",
           address: "上海市普陀区金沙江路 1515 号",
-          info:30,
+          info: 30,
           id: uuidv4(),
         },
         {
@@ -277,7 +277,7 @@ export default {
           status: "off_line",
           sex: "man",
           address: "上海市普陀区金沙江路 1515 号",
-          info:30,
+          info: 30,
           id: uuidv4(),
         },
         {
@@ -287,7 +287,7 @@ export default {
           status: "online",
           sex: "man",
           address: "上海市普陀区金沙江路 1518 号",
-          info:60,
+          info: 60,
           id: uuidv4(),
         },
         {
@@ -297,7 +297,7 @@ export default {
           status: "online",
           sex: "woman",
           address: "上海市普陀区金沙江路 1517 号",
-          info:30,
+          info: 30,
           id: uuidv4(),
         },
         {
@@ -307,7 +307,7 @@ export default {
           status: "off_line",
           sex: "man",
           address: "上海市普陀区金沙江路 1516 号",
-          info:30,
+          info: 30,
           id: uuidv4(),
         },
         {
@@ -317,7 +317,7 @@ export default {
           status: "online",
           sex: "woman",
           address: "上海市普陀区金沙江路 1515 号",
-          info:30,
+          info: 30,
           id: uuidv4(),
         },
         {
@@ -327,7 +327,7 @@ export default {
           status: "off_line",
           sex: "man",
           address: "上海市普陀区金沙江路 1515 号",
-          info:30,
+          info: 30,
           id: uuidv4(),
         },
       ],
@@ -354,9 +354,9 @@ export default {
           type: "time",
         },
         {
-          prop:'info',
-          label:'perfect_info',
-          type:'progress'
+          prop: "info",
+          label: "perfect_info",
+          type: "progress",
         },
         {
           prop: "address",
@@ -367,22 +367,23 @@ export default {
           prop: "operation",
           label: "operation",
           type: "button",
+          width:'150px',
           btn_list: [
             {
               label: "edit",
               isDisabled: (row) => true,
-              handle: (row,index) => {
-                 this.editMsg(row,index)
+              handle: (row, index) => {
+                this.editMsg(row, index);
               },
             },
             {
               label: "delete",
               type: "danger",
               isDisabled: (row) => {
-                return this.user_action.includes('admin')
+                return this.user_action.includes("admin");
               },
-              handle: (row,index) => {
-                 this.deleteMsg(row,index)
+              handle: (row, index) => {
+                this.deleteMsg(row, index);
               },
             },
           ],
@@ -390,8 +391,8 @@ export default {
       ],
     };
   },
-  computed:mapState({
-      user_action:state=>state.authModule.roles
+  computed: mapState({
+    user_action: (state) => state.authModule.roles,
   }),
   methods: {
     //每页条目数改变
@@ -445,103 +446,111 @@ export default {
     },
     //添加列表成员
     addUser() {
-      this.type='add'
+      this.type = "add";
       this.dialog_visible = true;
     },
     //批量删除
     deleteBatches() {
-      this.$confirm(this.$i18n.t('msg.delete_item'), this.$i18n.t("msg.tips"), {
-          type: 'warning'
-        }).then(() => {
-          this.totalData = this._.differenceBy(this.totalData,this.select_data,'id');
+      this.$confirm(this.$i18n.t("msg.delete_item"), this.$i18n.t("msg.tips"), {
+        type: "warning",
+      })
+        .then(() => {
+          this.totalData = this._.differenceBy(
+            this.totalData,
+            this.select_data,
+            "id"
+          );
           this.pageOptions = {
             currentPage: 1,
             pageSize: 10,
           };
           this.handelData(this.pageOptions);
           this.$_notify({
-            title:this.$i18n.t("msg.tips"),
-            type:'success',
-            message:this.$i18n.t('msg.delete_success')
-          })
-        }).catch(() => {
+            title: this.$i18n.t("msg.tips"),
+            type: "success",
+            message: this.$i18n.t("msg.delete_success"),
+          });
+        })
+        .catch(() => {
           this.$_notify({
-            title:this.$i18n.t("msg.tips"),
-            type:'info',
-            message:this.$i18n.t('msg.cancel_operation')
-          })        
+            title: this.$i18n.t("msg.tips"),
+            type: "info",
+            message: this.$i18n.t("msg.cancel_operation"),
+          });
         });
     },
     //关闭模态框
     handleClose(bool) {
       this.dialog_visible = bool;
-      setTimeout(()=>{
+      setTimeout(() => {
         this.$refs["opt"].resetFields();
-      },500)
+      }, 500);
     },
     //提交
     submit(bool) {
       this.$refs["opt"].validate((valid) => {
         if (valid) {
-          if(this.type==='add'){
-              this.totalData.unshift({ ...this.optForm, id: uuidv4() });
-              this.handelData(this.pageOptions);
-              this.dialog_visible = bool;
-              this.$_notify({
-                title: this.$i18n.t("msg.tips"),
-                type: "success",
-                message: this.$i18n.t("msg.create_success"),
-              });
-          }else{
-              this.$set(this.tableData,this.index,{...this.optForm})
-              this.dialog_visible = bool;
-              this.$_notify({
-                title: this.$i18n.t("msg.tips"),
-                type: "success",
-                message: this.$i18n.t("msg.edit_success"),
-              });
+          if (this.type === "add") {
+            this.totalData.unshift({ ...this.optForm, id: uuidv4() });
+            this.handelData(this.pageOptions);
+            this.dialog_visible = bool;
+            this.$_notify({
+              title: this.$i18n.t("msg.tips"),
+              type: "success",
+              message: this.$i18n.t("msg.create_success"),
+            });
+          } else {
+            this.$set(this.tableData, this.index, { ...this.optForm });
+            this.dialog_visible = bool;
+            this.$_notify({
+              title: this.$i18n.t("msg.tips"),
+              type: "success",
+              message: this.$i18n.t("msg.edit_success"),
+            });
           }
-           setTimeout(()=>{
+          setTimeout(() => {
             this.$refs["opt"].resetFields();
-           },500)
+          }, 500);
         } else {
           return false;
         }
       });
     },
     //编辑
-    editMsg(row,index){
-      this.type='edit'
-      this.index=index
+    editMsg(row, index) {
+      this.type = "edit";
+      this.index = index;
       this.$nextTick(() => {
-        this.optForm =this. _.cloneDeep(row);
-      })
-      this.dialog_visible=true;
+        this.optForm = this._.cloneDeep(row);
+      });
+      this.dialog_visible = true;
     },
     //删除
-    deleteMsg(row,index){
-      this.$confirm(this.$i18n.t('msg.delete_item'), this.$i18n.t("msg.tips"), {
-          type: 'warning'
-        }).then(() => {
-          this.totalData.splice(index,1)
+    deleteMsg(row, index) {
+      this.$confirm(this.$i18n.t("msg.delete_item"), this.$i18n.t("msg.tips"), {
+        type: "warning",
+      })
+        .then(() => {
+          this.totalData.splice(index, 1);
           this.pageOptions = {
             currentPage: 1,
             pageSize: 10,
           };
           this.handelData(this.pageOptions);
           this.$_notify({
-            title:this.$i18n.t("msg.tips"),
-            type:'success',
-            message:this.$i18n.t('msg.delete_success')
-          })
-        }).catch(() => {
+            title: this.$i18n.t("msg.tips"),
+            type: "success",
+            message: this.$i18n.t("msg.delete_success"),
+          });
+        })
+        .catch(() => {
           this.$_notify({
-            title:this.$i18n.t("msg.tips"),
-            type:'info',
-            message:this.$i18n.t('msg.cancel_operation')
-          })        
+            title: this.$i18n.t("msg.tips"),
+            type: "info",
+            message: this.$i18n.t("msg.cancel_operation"),
+          });
         });
-    }
+    },
   },
   mounted() {
     setTimeout(() => {

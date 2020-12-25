@@ -1,5 +1,8 @@
 # Y Manage System
 
+## 关于 Y Manage System
+> Y Manage System 基于vue2.6、element-ui开发.一套通用型的管理系统摸板.
+
 ## Project setup
 ```
 npm install

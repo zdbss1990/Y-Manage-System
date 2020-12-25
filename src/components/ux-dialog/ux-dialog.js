@@ -14,7 +14,7 @@ export default{
         },
         dialog_width:{
             type:String,
-            default:'30%'
+            default:'450px'
         },
         dialog_visible:{
             type:Boolean,

@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-15 15:40:34
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-17 15:54:08
+ * @LastEditTime: 2020-12-25 15:44:34
 -->
 <template>
   <div class="google-maps-tpl border-box min-height-full radius-4">
@@ -122,14 +122,14 @@ export default {
     position: absolute;
     top: 10px;
     left: 30px;
-    z-index: 1000;
+    z-index: 999;
     color: #fff;
   }
   .search-map {
     // position: absolute;
     top: 49px;
     left: 0px;
-    z-index: 1000;
+    z-index: 999;
     // width: 200px;
   }
 }

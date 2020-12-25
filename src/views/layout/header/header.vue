@@ -29,7 +29,7 @@
                   <div @click="logout">退出登录</div>
                 </el-dropdown-item>
                 <el-dropdown-item>
-                  <div>个人设置</div>
+                  <div @click="goToSetting">个人设置</div>
                 </el-dropdown-item>
                 <el-dropdown-item>
                   <div @click="setLang">
@@ -133,6 +133,11 @@ export default {
       }
       this.fullscreen = !this.fullscreen;
     },
+    goToSetting(){
+      this.$router.push({
+        path:'/user-management/personal-setting'
+      })
+    }
   },
 };
 </script>

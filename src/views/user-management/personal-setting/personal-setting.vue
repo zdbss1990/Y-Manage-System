@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-22 15:40:15
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-24 10:54:35
+ * @LastEditTime: 2020-12-25 15:52:20
 -->
 <template>
   <div class="personal-setting-tpl border-box min-height-full">
@@ -116,7 +116,7 @@
     <el-dialog
       :title="dialog_title"
       :visible.sync="dialog_visible"
-      width="50%"
+      width="700px"
       :append-to-body="true"
       @close="handleClose"
     >

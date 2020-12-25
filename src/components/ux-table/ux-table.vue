@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-27 17:15:11
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-22 16:56:57
+ * @LastEditTime: 2020-12-25 15:39:56
 -->
 <template>
   <div class="ux-table-tpl">
@@ -26,14 +26,18 @@
                 v-if="select_all"
                 align="center"
                 type="selection"
-                width="55">
+                width="55"
+                fixed
+                >
             </el-table-column>
             <el-table-column
                 class="select-single"
                 v-if="select_single"
                 align="center"
                 type="selection"
-                width="55">
+                width="55"
+                fixed
+                >
             </el-table-column>
              <template v-for="(column,index) in columnData">
                  <el-table-column 
@@ -43,6 +47,8 @@
                     :align="column.align || 'center'"
                     :width="column.width || null"
                     :sortable="column.sort"
+                    :fixed="column.prop==='operation' ? 'right':null"
+
                   >
                     <template v-slot="props">
                           <el-tooltip effect="dark" :content="`ID : ${props.row.uuid}`" placement="top-start" v-if="column.type==='uuid'"  popper-class="atooltip">

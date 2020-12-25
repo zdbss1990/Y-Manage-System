@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-21 17:25:04
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-23 15:03:44
+ * @LastEditTime: 2020-12-25 15:50:44
 -->
 <template>
   <div class="personal-center-tpl border-box min-height-full">
@@ -81,7 +81,7 @@
           </el-tab-pane>
           <el-tab-pane :label="`项目模块(${modules.length})`" name="second">
               <el-row :gutter="24">
-                   <el-col :span="12" v-for="(item,index) in modules" :key="index">
+                   <el-col :lg="12" :md="12" v-for="(item,index) in modules" :key="index">
                        <el-card class="box-card border-box m-b-10" shadow="never" >
                             <div class="f-s-14 p-20">
                                 <p class="font-bold f-s-18"><img :src="userAvatar" class="author-img m-r-5"> {{item.name}}</p>

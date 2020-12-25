@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-08 10:07:30
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-21 11:20:05
+ * @LastEditTime: 2020-12-25 15:48:55
 -->
 <template>
     <div class="not-found-page border-box min-height-full bg-f p-10 radius-4">
@@ -35,8 +35,16 @@ export default {
     margin-top: 30px;
     margin-bottom: 30px;
 }
-.not-found-img{
+@media (min-width: 768px) {
+  .not-found-img{
     width:500px;
+  }
+}
+
+@media (max-width: 767px){
+  .not-found-img{
+    width:300px;
+  }
 }
 .not-found-page{
    display: flex;
