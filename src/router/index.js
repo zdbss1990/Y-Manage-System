@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-16 10:22:39
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-24 14:09:30
+ * @LastEditTime: 2020-12-25 11:20:56
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router';
@@ -365,7 +365,7 @@ router.beforeEach(async (to, from, next) => {
         }
       }
   }else{
-      paths.includes(to.path) ? next():next('/login')
+      paths.includes(to.path) ? next():next({path:'/login',replace:true})
       NProgress.done()
   }
 })

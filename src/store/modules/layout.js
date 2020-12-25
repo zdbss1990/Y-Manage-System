@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-17 14:13:46
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-24 18:01:51
+ * @LastEditTime: 2020-12-25 14:42:27
  */
 import {
     getSession,
@@ -16,6 +16,7 @@ const layoutModule = {
         language: getSession('language') || 'zh_CN',
         menuBg:'#2d353c',
         fold:true,
+        screen:true
     },
     mutations: {
         CHANGE_MENU_STATE(state, show) {
@@ -35,6 +36,9 @@ const layoutModule = {
         },
         SET_FOLD_BTN:(state,show)=>{
             state.fold=show
+        },
+        SET_SCREEN_STATE:(state,screen)=>{
+            state.screen=screen
         }
     },
     //点开面包屑
@@ -67,6 +71,10 @@ const layoutModule = {
         //设置折叠按钮是否显示
         setFoldBtn({commit},show){
             commit('SET_FOLD_BTN',show)
+        },
+        //设置全屏显示
+        setScreen({commit},screen){
+            commit('SET_SCREEN_STATE',screen)
         }
     }
 }
