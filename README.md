@@ -1,5 +1,6 @@
 # Y Manage System
 
+![image](https://github.com/zdbss1990/image/blob/main/app.jpg)
 ## 关于 Y Manage System
 > Y Manage System 基于vue2.6、element-ui开发.一套通用型的管理系统摸板.
 
