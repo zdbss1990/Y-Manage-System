@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-18 14:48:50
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-17 10:07:38
+ * @LastEditTime: 2021-01-18 14:53:22
  */
 import server from './methods';
 //引入notify
@@ -41,12 +41,11 @@ class Service{
        }
 
        let defaultErrorFn=(err)=>{
-           if(loadingName) this.nowHandle[loadingName]=false
            self[moduleName][name].state=false;
            if(err.data){
               notify({
                 type:'error',
-                message:err.data.error,
+                message:err.data.message,
                 title:`${i18n.t(`msg.tips`)}`
               })
               return err
@@ -57,10 +56,12 @@ class Service{
        //失败
        let error=configs.error || defaultErrorFn;
        let callback=(res)=>{
+          if(loadingName) this.nowHandle[loadingName]=false
           self[moduleName][name].state=false;
           success(res)
        }
        let errCallBack=(err)=>{
+          if(loadingName) this.nowHandle[loadingName]=false
           self[moduleName][name].state=false;
           error(err)
        }

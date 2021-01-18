@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-21 15:14:54
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-21 16:58:25
+ * @LastEditTime: 2021-01-18 16:05:20
 -->
 <template>
     <div class="upload-tpl border-box min-height-full bg-f p-10 radius-4">
@@ -41,6 +41,7 @@
     </div>
 </template>
 <script>
+import Service from '@/api/'
 export default {
     data(){
         return{
@@ -64,7 +65,6 @@ export default {
                     }else if(window.webkitURL!=undefined){
                         url=window.webkitURL.createObjectURL(event.file)
                     }
-                    console.log(url)
                 return url
              }
            

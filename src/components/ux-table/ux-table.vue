@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-27 17:15:11
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-25 15:39:56
+ * @LastEditTime: 2021-01-18 13:31:48
 -->
 <template>
   <div class="ux-table-tpl">
@@ -39,11 +39,11 @@
                 fixed
                 >
             </el-table-column>
-             <template v-for="(column,index) in columnData">
+             <template v-for="(column) in columnData">
                  <el-table-column 
                     :label="$t(`table.${column.label}`) || ''"
                     :prop="column.prop"
-                    :key="index+'column'"
+                    :key="column"
                     :align="column.align || 'center'"
                     :width="column.width || null"
                     :sortable="column.sort"

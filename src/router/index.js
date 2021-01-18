@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-16 10:22:39
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-25 11:20:56
+ * @LastEditTime: 2021-01-18 15:57:52
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router';
@@ -289,7 +289,7 @@ export const authRoutes = [
     },
     { path: '*', name:'404', redirect: '/404'}
    ],
-  },
+  }
 ]
 //默认路由
 export const constantRoutes = [
@@ -302,9 +302,10 @@ export const constantRoutes = [
     component: Login
   }
 ]
-const resolveOriginal = VueRouter.prototype.push
-VueRouter.prototype.push = function push(location) {
-  return resolveOriginal.call(this, location).catch(err => err)
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location, onResolve, onReject) {
+	if (onResolve || onReject) return originalPush.call(this, location, onResolve, onReject)
+	return originalPush.call(this, location).catch(err => err)
 }
 const router = new VueRouter({
   mode: 'history',
@@ -348,6 +349,7 @@ router.beforeEach(async (to, from, next) => {
                 mode: 'history',
                 scrollBehavior: () => ({
                   y: 0,
+                  x:0
                 }),
                 routes: constantRoutes,
               }).matcher

@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-27 17:15:11
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-03 11:22:35
+ * @LastEditTime: 2021-01-18 11:36:26
  */
 /**
  *  @tableData 表格数据
@@ -80,8 +80,8 @@ export default {
             this.$emit('toPage', row)
         },
         sortChange(sort) {
-            let order = sort.order === 'ascending' ? 'asc' : 'desc'
-            this.$emit('sortChange', order)
+            let order = sort.order === 'ascending' ? 'ASC' : 'DESC'
+            this.$emit('sortChange', {sort_key:sort.prop,sort_val:order})
         },
         handleSelectionChange(data) {
             if(this.select_single) return

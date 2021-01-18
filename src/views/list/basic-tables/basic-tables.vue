@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-03 10:38:37
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-25 15:39:24
+ * @LastEditTime: 2021-01-18 11:37:32
 -->
 <template>
   <div class="basic-tables-tpl border-box min-height-full bg-f p-10 radius-4">
@@ -61,6 +61,7 @@
           @handleSizeChange="handleSizeChange"
           @handleCurrentChange="handleCurrentChange"
           @selectAllData="selectAllData"
+          @sortChange="sortChange"
         >
         </ux-table>
       </el-col>
@@ -438,6 +439,10 @@ export default {
       setTimeout(() => {
         this.loading = false;
       }, 1000);
+    },
+    //排序
+    sortChange(sort){
+      console.log(sort)
     },
     //重置
     resetSearch() {
