@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-11-27 17:15:11
  * @LastEditors: zhangyao
- * @LastEditTime: 2021-01-18 13:31:48
+ * @LastEditTime: 2021-02-07 17:17:18
 -->
 <template>
   <div class="ux-table-tpl">
@@ -43,7 +43,7 @@
                  <el-table-column 
                     :label="$t(`table.${column.label}`) || ''"
                     :prop="column.prop"
-                    :key="column"
+                    :key="column.id"
                     :align="column.align || 'center'"
                     :width="column.width || null"
                     :sortable="column.sort"
