@@ -2,7 +2,7 @@
  * @Author: zhangyao
  * @Date: 2020-12-21 17:25:04
  * @LastEditors: zhangyao
- * @LastEditTime: 2020-12-25 15:50:44
+ * @LastEditTime: 2021-02-07 17:27:20
 -->
 <template>
   <div class="personal-center-tpl border-box min-height-full">
@@ -126,7 +126,7 @@ export default {
           imgUrl: require("@assets/image/j.png"),
         },
         {
-          herf: "https://github.com/zdbss1990/vue-manage-template",
+          herf: "https://github.com/zdbss1990/Y-Manage-System",
           imgUrl: require("@assets/image/g.jpg"),
         },
         {
